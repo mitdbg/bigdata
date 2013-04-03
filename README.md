@@ -1,7 +1,7 @@
 MIT CSAIL Big Data Challenge
 ======================
 
-The challenge is hosted by BigData@CSAIL [http://bigdata.csail.mit.edu
+The challenge is hosted by BigData@CSAIL [http://bigdata.csail.mit.edu]
  and seeks to develop innovative prediction algorithms and
 compelling visualizations about transportation data from the City of
 Boston.
@@ -38,6 +38,7 @@ Prizes
 =======
 
 Prediction Challenge: $1000 Grand Prize, $500 Runner Up
+
 Visualization Challenge:  $1000 Grand Prize, $500 Runner Up
 
 
