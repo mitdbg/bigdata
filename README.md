@@ -11,10 +11,14 @@ Help your city better understand their traffic patterns!
 Prediction Challenge
 ============
 
-Predict the demand for taxis within a 5 mile radius of a random location in
-Boston during a given time window (e.g., 11pm to 2am third thursday of April
-2013), given the current events that day, commercial renvue information, and
-the tweet stream immediately before the time window.
+TODO: think about the specifics of the prediction result, and the model inputs
+(discretized?  in what way?
+
+Predict expected number of taxi rides on all blocks within a 5 mile radius of a random
+street corner location in Boston during a given time window discretized to 15
+minute intervals (e.g., 11pm to 2:15am third thursday of April 2013), given the
+current events that day, commercial renvue information, and the tweet stream
+immediately before the time window.
 
 We have collected a month worth of data (see below for descriptions of the
 datasets).   We will provide two weeks worth of training data and draw the test
@@ -37,6 +41,8 @@ Money Galore!!
 
 The Datasets
 ==========
+
+TODO: describe the datasets in more detail
 
 * **MBTA demand**
 * **Boston taxi cab data**: All
