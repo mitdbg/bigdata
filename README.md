@@ -1,10 +1,11 @@
 MIT CSAIL Big Data Challenge
 ======================
 
-The challenge is hosted by BigData@CSAIL [http://bigdata.csail.mit.edu]
- and seeks to develop innovative prediction algorithms and
-compelling visualizations about transportation data from the City of
-Boston.
+Late June Summer 2013, for one month
+
+The challenge is hosted by BigData@CSAIL [http://bigdata.csail.mit.edu] and
+seeks to develop innovative prediction algorithms and compelling visualizations
+about transportation data from the City of Boston.
 
 Prediction Challenge
 ============
@@ -31,6 +32,8 @@ ridership at a randomly selected set of locations based on the test data.
 Visualization Challenge
 ===============
 
+TODO: who is the audience for the viz?
+
 The goal is to visualize the data in an informative, beautiful, or
 surprising way that illustrates taxi ridership in Boston and its
 relationship to nearby events and locales.
@@ -50,10 +53,19 @@ Visualization Challenge:  $1000 Grand Prize, $500 Runner Up
 The Datasets
 ==========
 
-TODO: describe the datasets in more detail
+TODO
+
+* describe the datasets in more detail
+* goal: may to june data
+* use your own data?  needs to be public?
+
+.
 
 * **MBTA demand**
 * **Boston taxi cab data**: All
+* **MBTA ridership**:
 * **Local events data**: Boston events information (location, event type, description, category, etc)
 * **Commercial venue data**: categorization and descriptions of all Boston commercial venues, including GPS locations.
 * **Tweet stream**: all geocoded tweets within the Greater Boston area.
+* **Points of Interest**: collection of venues that have been labeled as "interesting" points.
+* **Hourly weather data**: temperature, temperature with wind chill, rain/shine/snow
