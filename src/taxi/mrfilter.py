@@ -140,6 +140,9 @@ if __name__ == "__main__":
           print e
           print tup
           continue
+        
+        if lineidx % 10000 == 0:
+          print "%s\t%d" % (fname, lineidx)
 
 
 

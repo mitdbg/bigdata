@@ -1,0 +1,263 @@
+@import url(http://fonts.googleapis.com/css?family=Lato|Noto+Serif|Magra);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
+
+
+html{
+background: white;
+font-family: open sans, helvetica, arial;
+}
+
+body{
+	width: 900px;
+	margin: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #FAFAFA;
+  background: white;
+  font-size: 12pt;
+}
+table {
+    font-size: 12pt;
+    border-collapse: collapse;
+}
+table td {
+  padding: 0px;
+}
+table th {
+  text-align: left;
+  border-bottom: 3px solid #e9e9e9;
+  padding: 1em;
+}
+
+table.dataset {
+  width: 100%;
+  background: #f8f8f8;
+  border: 1px solid #e9e9e9;
+}
+table.dataset td {
+  padding: 5px;
+  padding: 1em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 10px;
+  border: 1px solid #e9e9e9;
+}
+
+
+form {
+  background: #fff7e8;
+  width: 100%;
+  padding: 2em;
+  text-align: center;
+
+}
+
+form textarea {
+  width: 100%;
+  height: 10em;
+  border: 1px solid #e9e9e9;
+  font-size: 12pt;
+}
+
+button {
+  font-size: 15pt;
+  width: 100%;
+  padding: .75em;
+  color: white;
+  border-radius: 2px;
+  background-color: #02B3FF;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid #5596B0;
+  border-bottom: 1px solid #5596B0;
+}
+
+code {
+  font-size: 10pt;
+  color: #556;
+}
+
+a, a:visited {
+  font-weight: 700;
+  font-size: bigger;
+	color: #357097;
+  text-decoration: none;
+}
+
+ul, ol { list-style-position: outside; }
+ul { list-style-type: circle; }
+ol { }
+li { margin-bottom: 0.8em }
+
+h1{
+	position: relative;
+	margin-top: 5ex;
+	font-weight: bold;
+	border-bottom: 1px solid #c7c7c7;
+	font-size: 1.5em;
+  margin-left: 0px;
+}
+
+h2{
+	position: relative;
+	margin-top: 5ex;
+	margin-bottom: 0.5ex;
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+h3{
+	position: relative;
+	margin-top: 2ex;
+	margin-bottom: 0.5ex;
+	font-size: 1em;
+	font-weight: 600;
+}
+
+table {
+/*    font-size: 10pt; */
+}
+table.row { }
+table.row td {
+    padding: 10px;
+}
+
+
+
+.header {
+  font-family: "Lato", serif;
+  font-size: 15pt;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+  background: white;
+	padding: 5px;
+  padding-bottom: 0px;
+  color: bluesteel;
+}
+
+.nav {
+	margin: 0px;
+}
+
+.nav a {
+	margin-right: 5px;
+  color; rgb(29, 117, 185);
+  text-decoration: none;
+}
+
+.nav a:visited {
+  color: rgb(127, 173, 241);
+}
+
+.footer {
+	margin-top: 20px;
+  padding-top: 20px;
+	font-size: 9pt;
+	color: black;
+	text-align: center;
+	padding: 3px;
+	position: relative;
+	clear: both;
+	background: white;
+}
+
+
+.main {
+	margin: 10px;
+  margin-top: 1em;
+}
+
+.main .section {
+  padding-left: 1em;
+}
+
+.main .section p {
+  padding-left: 1em;
+}
+
+.section ol li i {
+  display: block;
+  font-weight: bold;
+}
+
+
+
+#coverimage {
+  background-image:url('../images/gregory-large.jpg');
+  background-position: 50 -140;
+  background-size: 800;
+  display: block;
+  width: 100%;
+  height: 250px;
+  clear: both;
+}
+
+#ggscreen { width: 100%; }
+
+#mypic {
+	width: 100px;
+	height: 100px;
+	background-image:url(../images/me.jpg);
+}
+
+#mypic:hover {
+	background-image:url(../images/me_awake.png);
+}
+
+
+
+@media  (max-width:1300px) {
+    body {
+        width: 700px;
+        font-size: 12pt;
+    }
+    table {
+        font-size: 12pt;
+    }
+    #coverimage {
+      background-position: 0 -100;
+      background-size: 680px;
+    }
+}
+
+
+@media  (max-width:900px) {
+    body {
+        width: 500px;
+        font-size: 12pt;
+    }
+    table {
+      font-size: 12pt;
+    }
+    table.row td {
+      padding-left: 0px;
+      padding: 0px;
+    }
+    h1, h2, h3 {
+      margin: 5px;
+      padding: 0px;
+      margin-top: 1em;
+    }
+    li { margin-bottom: 0px; }
+    .main.section {
+      padding-left: .5em;
+    }
+    .main.section.p {
+      padding-left: .5em;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+
+    .header nav {
+      padding-left: 1.5em;
+    }
+    .thumb { display: none; }
+    #coverimage {
+      height: 200px;
+      background-position: 30 -70;
+      background-size: 470px;
+    }
+}
+
