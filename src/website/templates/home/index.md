@@ -1,40 +1,39 @@
 MIT CSAIL Big Data Challenge
-======================
-
+============================
 
 [BigData@CSAIL](http://bigdata.csail.mit.edu) MIT and the City of
 Boston are hosting a big data challenge seeking to develop innovative
-prediction alogirthms and compelling visualizations of transportation
-data around the Boston area.
+prediction algorithms and compelling visualizations of taxi cab trips in the Boston area.
 
-The competition will run from XXX to YYY and is split into
-[prediction](#prediction) and [visualization](#visualization)
-challenges, each with prizes.
+##Motivation for the Challenge
+ The City of Boston is interested in gaining new insights into how people use public transportation to travel in and around the downtown Boston area.  With urban congestion on the rise, city planners are looking for ways to improve transportation such as providing people with more options to get from one place to another (walking, biking, driving, or using public transit) and by reducing and more efficiently routing vehicles in the city.
+
+This MIT Big Data Challenge will focus on one mode of public transportation: Taxi Cabs.  Have you ever noticed that cabs are never around when you need them?  By better understanding patterns in taxi ridership, we hope to provide new insights for city planners, such as:
+
+*How get more cabs where they are needed, when they are needed?  
+*What are the ideal locations for cab stands? 
+*When should the City add or remove cab stands?  
+*How many cabs should be waiting around a specific location? 
+*Are there viable alternatives to taking a cab? 
+*How does taxi ridership patterns differ on weekdays vs. weekends?
+
+This Big Data Challenge provides a unique opportunity to analyze City of Boston taxi data (XXXX taxi rides) and to combine multiple data sets including social media data, transit ridership, events data and weather data to effectively predict demand and better understand patterns in taxi ridership.  We hope this will result in new insights for the City of Boston and the public that whill improve transportation in our city (and the ability to get a cab when you need one)!
 
 
-The competition is open to students from the MIT community There is a $1,000
-prize that will be awarded to the team that can most accurately predict
-ridership at a randomly selected set of locations based on the test data.
+##Competition Overview
 
+The competition is open to individuals or teams.  The only requirement is that one team member must be a member of the MIT community (have an Athena account and MIT certificates).
 
+The competition will run from XXX to YYY and focuses on two tasks, prediction and visualization, with separate prizes in each category:
+
+* _Prediction Challenge_:  Here the goal is to predict the number of taxi trips originating at different times of day from different locations around city.   A total of $5000 will be awarded (a $4000 winner and a $1000 runner-up).
+
+* _Visualization Challenge_:  Here the goal is to produce the most compelling visualization (static, animated or interactive) of taxi activity in Boston. A total of $5000 will be awarded (a $4000 winner and a $1000 runner-up).
 
 <a name="prediction" href="prediction"> Prediction Challenge</a>
 ============
 
-Some paragraphs describing the problem and what is interesting.
-
-## Objective
-
-TODO: think about the specifics of the prediction result, and the model inputs
-(discretized?  in what way?
-
-The goal is to predict the demand (expected number of taxi rides given) for
-taxis along all blocks within a 0.5 mile radius of a specific latitude,
-longitude location in Boston during in a particular time window discretized to
-30 minute time windows  (e.g., between 11:00pm and 2:30am on April 15, 2013
-around Downtown Crossing), given the current events from that day, the
-locations of major stores and venues, and the tweet stream leading up to the
-time period.
+The goal of this challenge is to predict taxi demand (total # of taxi trips) in downtown Boston based on historical taxi data and other related data sets (weather, events, social media data).   Demand prediction will be within a specified (0.1 mile) radius of key locations in Boston during a specified half hour time window  (e.g., between 11 and 11:30pm on March 15, 2013 at the intersection of Summer St and Tremont St.).   The prize will be awarded to the team that most accurately predicts (with minimum mean-squared error) ridership at a provided  set of test locations based on the test data.
 
 We have collected XXX months worth of data (see below for descriptions
 of the datasets).  We will provide XXX weeks worth of training data
@@ -47,34 +46,18 @@ and draw the test data randomly from XXX weeks of data.
 <a name="visualization" href="visualization"> Visualization Challenge</a>
 ===============
 
-Describe the audience for the vis and why it's worth participating in. 
-
-## Objective
-
-The goal is to visualize the data in an informative, beautiful, or
-surprising way that illustrates taxi ridership in Boston and its
-relationship to nearby events and locales.
-
+The goal is to visualize the taxi  data in an informative, beautiful, or surprising way.  We are particularly interested in visualizations that contrast or compare taxi/public transportation ridership in Downtown and relate them  to nearby events and locales.  Visualizations may include maps, animations or static graphics and ideally should reveal new or interesting trends and patterns.
 We will have a judging panel consisting of visualization experts, data
 scientists, and leaders from the city of Boston's transportation departments.
 
 [Click here for more details and to participate](/visualization)
 
-Prizes
-=======
-
-Prediction Challenge: $1000 Grand Prize, $500 Runner Up
-
-Visualization Challenge:  $1000 Grand Prize, $500 Runner Up
-
-
 The Datasets
 ==========
 
-We will provide the following datasets of data from June and July or 2013.  Participants are allowed and encouraged to
-find and use additional datasets, with the stipulation that the datasets are publically 
-accessible.
+We  provide the following datasets of data .  Participants are allowed and encouraged to find and use additional datasets, with the stipulation that the datasets are publicly  accessible.
 
+XXX -- this should be a table like what we have
 
 * **Boston taxi cab data**: Every trip starting from Boston proper.  Includes start and end datetime, street address (if available) and lat/lon coordinates.
 * **Local Events data**: Every Boston event.  Provided by Goby.
@@ -86,8 +69,19 @@ accessible.
 Partners
 ============
 
+We are especially grateful to  our data parters who made this challenge possible.
+These include:
+
 City of Boston
+
+CMTdata
 
 Goby
 
-CMTdata
+MBTA
+
+Twitter
+
+Judging Panel
+================
+
