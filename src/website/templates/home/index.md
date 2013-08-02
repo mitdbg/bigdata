@@ -1,7 +1,7 @@
-MIT CSAIL Big Data Challenge
-============================
+<div style="position:absolute; top:0; z-index:2"> <h1> MIT CSAIL Big Data Challenge </h2>
+</div>
 
-[BigData@CSAIL](http://bigdata.csail.mit.edu) MIT and the City of
+[BigData@CSAIL](http://bigdata.csail.mit.edu) and the City of
 Boston are hosting a big data challenge seeking to develop innovative
 prediction algorithms and compelling visualizations of taxi cab trips in the Boston area.
 
@@ -10,12 +10,12 @@ prediction algorithms and compelling visualizations of taxi cab trips in the Bos
 
 This MIT Big Data Challenge will focus on one mode of public transportation: Taxi Cabs.  Have you ever noticed that cabs are never around when you need them?  By better understanding patterns in taxi ridership, we hope to provide new insights for city planners, such as:
 
-*How get more cabs where they are needed, when they are needed?  
-*What are the ideal locations for cab stands? 
-*When should the City add or remove cab stands?  
-*How many cabs should be waiting around a specific location? 
-*Are there viable alternatives to taking a cab? 
-*How does taxi ridership patterns differ on weekdays vs. weekends?
+* How get more cabs where they are needed, when they are needed?  
+* What are the ideal locations for cab stands? 
+* When should the City add or remove cab stands?  
+* How many cabs should be waiting around a specific location? 
+* Are there viable alternatives to taking a cab? 
+* How does taxi ridership patterns differ on weekdays vs. weekends?
 
 This Big Data Challenge provides a unique opportunity to analyze City of Boston taxi data (XXXX taxi rides) and to combine multiple data sets including social media data, transit ridership, events data and weather data to effectively predict demand and better understand patterns in taxi ridership.  We hope this will result in new insights for the City of Boston and the public that whill improve transportation in our city (and the ability to get a cab when you need one)!
 
@@ -57,7 +57,7 @@ The Datasets
 
 We  provide the following datasets of data .  Participants are allowed and encouraged to find and use additional datasets, with the stipulation that the datasets are publicly  accessible.
 
-XXX -- this should be a table like what we have
+<i>XXX -- this should be a table like what we have in the word doc with links (possibly on a separate page)</i>
 
 * **Boston taxi cab data**: Every trip starting from Boston proper.  Includes start and end datetime, street address (if available) and lat/lon coordinates.
 * **Local Events data**: Every Boston event.  Provided by Goby.
