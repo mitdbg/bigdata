@@ -42,6 +42,9 @@ table.dataset td {
   margin-right: 10px;
   border: 1px solid #e9e9e9;
 }
+table.dataset td.datasetname {
+  font-weight: bold;
+}
 
 
 form {
@@ -73,8 +76,10 @@ button {
 }
 
 code {
+  font-family: Courier New;
   font-size: 10pt;
   color: #556;
+  color: #357097;
 }
 
 a, a:visited {
