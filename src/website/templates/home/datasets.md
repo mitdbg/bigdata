@@ -7,11 +7,6 @@ You are allowed and encouraged to find and use additional datasets, with the sti
 Part of the challenge is data integration.  We have done minor
 cleaning but otherwise the data is provided as-is.
 
-# Get the data
-
-Part of the challenge is data integration.  We have done minor
-cleaning but otherwise the data is provided as-is.
-
 
 <table class="dataset">
   <tr>
