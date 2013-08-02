@@ -7,6 +7,12 @@ You are allowed and encouraged to find and use additional datasets, with the sti
 Part of the challenge is data integration.  We have done minor
 cleaning but otherwise the data is provided as-is.
 
+# Get the data
+
+Part of the challenge is data integration.  We have done minor
+cleaning but otherwise the data is provided as-is.
+
+
 <table class="dataset">
   <tr>
     <th>Dataset</th>
@@ -14,7 +20,7 @@ cleaning but otherwise the data is provided as-is.
     <th>Format</th>
   </tr>
   <tr>
-    <td rowspan=2>Taxi</td>
+    <td class="datasetname" rowspan=2>Taxi</td>
     <td>Train</td>
     <td><a href="">.zip</a> (zip'd csv file)</td>
   </tr>
@@ -23,7 +29,7 @@ cleaning but otherwise the data is provided as-is.
     <td><a href="">.zip</a> (zip'd csv file)</td>
   </tr>
   <tr>
-    <td rowspan=2>MBTA</td>
+    <td class="datasetname" rowspan=2>MBTA</td>
     <td>Train</td>
     <td><a href="">.zip</a> (zip'd csv file)</td>
   </tr>
@@ -32,7 +38,7 @@ cleaning but otherwise the data is provided as-is.
     <td><a href="">.zip</a> (zip'd csv file)</td>
   </tr>
   <tr>
-    <td rowspan=2>Twitter</td>
+    <td class="datasetname" rowspan=2>Twitter</td>
     <td>Train</td>
     <td><a href="">.zip</a> (zip'd csv file)</td>
   </tr>
@@ -41,7 +47,7 @@ cleaning but otherwise the data is provided as-is.
     <td><a href="">.zip</a> (zip'd csv file)</td>
   </tr>
   <tr>
-    <td rowspan=2>Weather</td>
+    <td class="datasetname" rowspan=2>Weather</td>
     <td>Train</td>
     <td><a href="">.zip</a> (zip'd csv file)</td>
   </tr>
@@ -50,7 +56,7 @@ cleaning but otherwise the data is provided as-is.
     <td><a href="">.zip</a> (zip'd csv file)</td>
   </tr>
   <tr>
-    <td rowspan=2>Events</td>
+    <td class="datasetname" rowspan=2>Events</td>
     <td>Train</td>
     <td><a href="">.zip</a> (zip'd csv file)</td>
   </tr>
@@ -59,5 +65,4 @@ cleaning but otherwise the data is provided as-is.
     <td><a href="">.zip</a> (zip'd csv file)</td>
   </tr>
 </table>
-
 
