@@ -71,10 +71,9 @@ def compute_score(demands):
     trueval = CORRECT_DEMANDS[key]
     if key in  demands:
       estval = demands[key]
-      sqerrs.append(float(abs(trueval - estval)) ** 2)
+      sqerrs.append(float(trueval - estval) ** 2)
 
-  if not sqerrs: return 0
-  return sum(sqerrs) / len(sqerrs)
+  return sum(sqerrs) ** 0.5
 
 def parse(submission=""):
   """
