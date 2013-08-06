@@ -16,66 +16,6 @@ None
 
 Please don't DDOS us
 
-# Get the data
-
-Part of the challenge is data integration.  We have done minor
-cleaning but otherwise the data is provided as-is.
-
-
-<table class="dataset">
-  <tr>
-    <th>Dataset</th>
-    <th>File Name</th>
-    <th>Format</th>
-  </tr>
-  <tr>
-    <td class="datasetname" rowspan=2>Taxi</td>
-    <td>Train</td>
-    <td><a href="">.zip</a> (zip'd csv file)</td>
-  </tr>
-  <tr>
-    <td>Test</td>
-    <td><a href="">.zip</a> (zip'd csv file)</td>
-  </tr>
-  <tr>
-    <td class="datasetname" rowspan=2>MBTA</td>
-    <td>Train</td>
-    <td><a href="">.zip</a> (zip'd csv file)</td>
-  </tr>
-  <tr>
-    <td>Test</td>
-    <td><a href="">.zip</a> (zip'd csv file)</td>
-  </tr>
-  <tr>
-    <td class="datasetname" rowspan=2>Twitter</td>
-    <td>Train</td>
-    <td><a href="">.zip</a> (zip'd csv file)</td>
-  </tr>
-  <tr>
-    <td>Test</td>
-    <td><a href="">.zip</a> (zip'd csv file)</td>
-  </tr>
-  <tr>
-    <td class="datasetname" rowspan=2>Weather</td>
-    <td>Train</td>
-    <td><a href="">.zip</a> (zip'd csv file)</td>
-  </tr>
-  <tr>
-    <td>Test</td>
-    <td><a href="">.zip</a> (zip'd csv file)</td>
-  </tr>
-  <tr>
-    <td class="datasetname" rowspan=2>Events</td>
-    <td>Train</td>
-    <td><a href="">.zip</a> (zip'd csv file)</td>
-  </tr>
-  <tr>
-    <td>Test</td>
-    <td><a href="">.zip</a> (zip'd csv file)</td>
-  </tr>
-</table>
-
-
 # Submissions
 
 ## Submission Format
@@ -121,7 +61,7 @@ To clarify, we will use the following python program to parse your submission
 
 ## Make a submission
 
-The final submission form will appear in the last week of competition.
+The final submission form will appear in the last week of competition.  You can use the form below to test your predictions.
 
 <form action="/submit/" method="post">
   <textarea name="submission">Copy and paste your submission contents here</textarea>

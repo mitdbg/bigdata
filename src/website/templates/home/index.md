@@ -54,15 +54,16 @@ scientists, and leaders from the city of Boston's transportation departments.
 
 # The Datasets
 
-We  provide the following datasets of data .  Participants are allowed and encouraged to find and use additional datasets, with the stipulation that the datasets are publicly  accessible.
-
-<i>XXX -- this should be a table like what we have in the word doc with links (possibly on a separate page)</i>
+We provide the following datasets on [this page](/datasets):
 
 * **Boston taxi cab data**: Every trip starting from Boston proper.  Includes start and end datetime, street address (if available) and lat/lon coordinates.
 * **Local Events data**: Every Boston event.  Provided by Goby.
 * **Tweet stream**: Every geocoded tweet originating from the Boston area.
 * **MBTA data**: Every charlie card swipe.
 * **Weather data**: Hourly weather information.
+
+
+Participants are allowed and encouraged to find and use additional datasets, with the stipulation that the datasets are publicly  accessible.
 
 
 Partners
