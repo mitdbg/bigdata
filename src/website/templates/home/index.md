@@ -1,4 +1,4 @@
-<div style="position:absolute; top:0; z-index:2"> <h1> MIT CSAIL Big Data Challenge </h2>
+<div style="position:absolute; top:0; z-index:2"> <h1> MIT Big Data Challenge </h2>
 </div>
 
 [BigData@CSAIL](http://bigdata.csail.mit.edu) and the City of
