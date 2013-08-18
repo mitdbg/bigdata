@@ -1,5 +1,3 @@
-<div style="position:absolute; top:0; z-index:2"> <h1> MIT CSAIL Big Data Challenge </h2>
-</div>
 
 [BigData@CSAIL](http://bigdata.csail.mit.edu) and the City of
 Boston are hosting a big data challenge seeking to develop innovative
@@ -57,10 +55,10 @@ scientists, and leaders from the city of Boston's transportation departments.
 We provide the following datasets on [this page](/datasets):
 
 * **Boston taxi cab data**: Every trip starting from Boston proper.  Includes start and end datetime, street address (if available) and lat/lon coordinates.
-* **Local Events data**: Every Boston event.  Provided by Goby.
+* **Local Events data**: Every Boston event.  Provided by NAVTEQ.
 * **Tweet stream**: Every geocoded tweet originating from the Boston area.
 * **MBTA data**: Every charlie card swipe.
-* **Weather data**: Hourly weather information.
+* **Weather data**: Hourly weather information.  Provided by [Weather Underground](http://wunderground.com).
 
 
 Participants are allowed and encouraged to find and use additional datasets, with the stipulation that the datasets are publicly  accessible.

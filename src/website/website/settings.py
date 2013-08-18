@@ -124,7 +124,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home'
+    'home',
+    'registration'
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -159,3 +160,8 @@ LOGGING = {
         },
     }
 }
+
+
+# Registration Config
+ACCOUNT_ACTIVATION_DAYS = 2
+

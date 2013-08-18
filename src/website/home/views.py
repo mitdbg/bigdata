@@ -24,7 +24,7 @@ def render_md(request, mdfilepath, context=None):
     #m = Markdown()
     #content = m.convert(s)
   context['content'] = content
-  return render(request, "home/index_template.html", context)
+  return render(request, "home/md_template.html", context)
 
 def render_page(request, pagename, context=None):
   mdfilepath = "./templates/home/%s.md" % pagename
@@ -38,12 +38,12 @@ def page(request, pagename=None):
   try:
     return render_page(request, pagename)# "./templates/home/index.md")
   except Exception as e:
-    return error(request, str(e))
+    return error(request, 'Could not find page', str(e))
 
-def error(request, msg=""):
-  content = '<h1>Error</h1><section>%s</section>' % msg
-  context = { 'content': content }
-  return render(request, "home/index_template.html", context)
+# This should be a context manager
+def error(request, title='There was an error', msg=""):
+  context = {'title': 'There was an error',  'message': msg }
+  return render(request, "error.html", context)
 
 
 def info(request):

@@ -1,0 +1,4 @@
+{{site}}
+
+{{activation_key}}
+You have {{expiration_days}} days to activate this account before it expires.

@@ -1,3 +1,19 @@
+The prediction challenge will XXX.  We will provide a training
+dataset for you to construct models.  Then on YYY date we will
+release an initial test dataset and provide N locations, specified
+by lat, lon bounding boxes and a time window, for you to predict
+the number of taxi routes initiated within the window.  You can
+[submit](#submit) predictions for this dataset as many times as you
+wish, and we will provide a leaderboard that updates your score on
+each submission to track contestant progress against each other.
+The initial test dataset is for validation purposes only and has
+no effect on the final evaluation.
+
+In the last week of the competition, we will release the final test
+dataset for which contestants will be ultimately compared.  You may
+submit as many times as you wish but the final scores will be release
+only at the end of the competition.
+
 # Rules
 
 ### One account per participant
@@ -6,15 +22,13 @@
 
 ### Don't try to deanonymize the data
 
-Please don't
-
 ### Team limits
 
-None
+There is not limit to your team size.
 
 ### Submission limits
 
-Please don't DDOS us
+Please don't DDOS the submission form.
 
 # Submissions
 
