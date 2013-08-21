@@ -6,7 +6,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('MIT BigData', 'bigdatachallenge@example.com'),
+    # ('MIT BigData', 'bigdatachallenge@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -25,7 +25,8 @@ DATABASES = {
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+# XXX: set to: '.yourdomain.com'
+ALLOWED_HOSTS = ["*"]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -92,6 +93,7 @@ SECRET_KEY = '#5nj=zdqj8kt$cyd=nzrnk@7po77zi3jd5fn^09gl_6^=j&&t3'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
+    #'django.template.loaders.app_directories.load_template_source',
 #     'django.template.loaders.eggs.Loader',
 )
 

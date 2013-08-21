@@ -1,4 +1,8 @@
-{{site}}
+Hello!  
 
-{{activation_key}}
-You have {{expiration_days}} days to activate this account before it expires.
+Thanks for signing up for the MIT Big Data Challenge.  Your activation key is: {{activation_key}}
+
+or simply copy and paste: http://XXX/account/activate/{{activation_key}}
+
+
+Please activate soon, because this code expires in {{expiration_days}} days!

@@ -1,0 +1,16 @@
+<h2>Make a submission</h2>
+
+
+<p>The final submission form will appear in the last week of competition.  You can use the form below to test your predictions.</p>
+
+{% if user.is_authenticated %}
+  <form action="/submit/" method="post">
+    <textarea name="submission">Copy and paste your submission contents here</textarea>
+    <button>submit</button>
+  </form>
+{% else %}
+  Please <a href="/accounts/login">login</a> or 
+  <a href="/accounts/register">register</a> to submit!
+{% endif %}
+
+

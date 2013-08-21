@@ -5,6 +5,7 @@
 <h1>Login</h1>
 
 <form method="post" action="/accounts/login/">
+  {% csrf_token %}
 <table class="register">
 {{form.as_table}}
 <tr><td colspan=2><input type="submit" /></td></tr>

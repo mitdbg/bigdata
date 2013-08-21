@@ -1,7 +1,10 @@
 import os
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.template import RequestContext
+from django.shortcuts import render, render_to_response
+from django.contrib.auth.decorators import login_required
+
 import misaka as m
 from markdown import Markdown
 
@@ -27,6 +30,13 @@ def render_md(request, mdfilepath, context=None):
   return render(request, "home/md_template.html", context)
 
 def render_page(request, pagename, context=None):
+  htmlfilepath = "./templates/home/%s.html" % pagename
+  print htmlfilepath
+  if os.path.exists(htmlfilepath):
+    return render_to_response(
+        'home/%s.html'%pagename, 
+        context_instance=RequestContext(request))
+
   mdfilepath = "./templates/home/%s.md" % pagename
   print mdfilepath
   return render_md(request, mdfilepath, context)
@@ -36,7 +46,7 @@ def index(request):
 
 def page(request, pagename=None):
   try:
-    return render_page(request, pagename)# "./templates/home/index.md")
+    return render_page(request, pagename)
   except Exception as e:
     return error(request, 'Could not find page', str(e))
 
@@ -55,6 +65,7 @@ def prediction(request):
 def visualization(request):
   return render_md(request, "./templates/home/visualization.md")
 
+@login_required
 def submit(request):
   if request.method == 'POST':
     uid = request.POST.get('uid', None)
