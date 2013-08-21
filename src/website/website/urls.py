@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     (r'^accounts/password_change_done/$', 'django.contrib.auth.views.password_change_done', {'template_name': 'home/index.html'}),
     (r'^accounts/password_reset_done/$', 'django.contrib.auth.views.password_reset_done', {'template_name': 'home/index.html'}),
     (r'^accounts/password_reset_complete/$', 'django.contrib.auth.views.password_reset_complete', {'template_name': 'home/index.html'}),
+    #(r'^accounts/', include('registration.backends.simple.urls')),
     (r'^accounts/', include('registration.backends.default.urls')),
     url(r'^', include('home.urls')),
 
