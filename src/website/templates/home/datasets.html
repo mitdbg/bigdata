@@ -4,7 +4,7 @@
 
 <h1>Get the data</h1>
 
-<p>We provide the following datasets for your use in the challenges.  {% if user.is_authenticated %}Please <a href="/accounts/login">login</a> to download the files.  {% endif %}</p>
+<p>We provide the following datasets for your use in the challenges.  {% if not user.is_authenticated %}Please <a href="/accounts/login">login</a> to download the files.  {% endif %}</p>
 
 <p>You are allowed and encouraged to find and use additional datasets, with the stipulation that the datasets must be publicly accessible.</p>
 

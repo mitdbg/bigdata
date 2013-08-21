@@ -7,11 +7,14 @@
   {% infobox user %}
 {% endif %}
 
+<div class="heading">
 <a href="http://bigdata.csail.mit.edu">BigData@CSAIL</a> and the City of
 Boston are hosting a big data challenge seeking to develop innovative
 prediction algorithms and compelling visualizations of taxi cab trips in the Boston area.
+</div>
 
-<h2>Motivation for the Challenge</h2>
+<div class="section">
+<div class="textseparator"><h1>Motivation</h1></div>
 
 <p>
  The City of Boston is interested in gaining new insights into how people use public transportation to travel in and around the downtown Boston area.  With urban congestion on the rise, city planners are looking for ways to improve transportation such as providing people with more options to get from one place to another (walking, biking, driving, or using public transit) and by reducing and more efficiently routing vehicles in the city.
@@ -33,9 +36,12 @@ This MIT Big Data Challenge will focus on one mode of public transportation: Tax
 <p>
 This Big Data Challenge provides a unique opportunity to analyze City of Boston taxi data (XXXX taxi rides) and to combine multiple data sets including social media data, transit ridership, events data and weather data to effectively predict demand and better understand patterns in taxi ridership.  We hope this will result in new insights for the City of Boston and the public that whill improve transportation in our city (and the ability to get a cab when you need one)!
 </p>
+</div>
 
 
-<h1>Competition Overview</h1>
+
+<div class="section">
+<div class="textseparator"><h1>Competition Overview</h1></div>
 
 <p>
 The competition is open to individuals or teams.  The only requirement is that one team member must be a member of the MIT community (have an Athena account and MIT certificates).
@@ -51,7 +57,7 @@ The competition will run from XXX to YYY and focuses on two tasks, prediction an
   </ul>
 
 
-<h2> <a name="prediction" href="prediction"> Prediction Challenge</a></h2>
+<h2>Prediction Challenge</h2>
 
 <p>
 The goal of this challenge is to predict taxi demand (total # of taxi trips) in downtown Boston based on historical taxi data and other related data sets (weather, events, social media data).   Demand prediction will be within a specified (0.1 mile) radius of key locations in Boston during a specified half hour time window  (e.g., between 11 and 11:30pm on March 15, 2013 at the intersection of Summer St and Tremont St.).   The prize will be awarded to the team that most accurately predicts (with minimum mean-squared error) ridership at a provided  set of test locations based on the test data.
@@ -66,7 +72,7 @@ and draw the test data randomly from XXX weeks of data.
 <a href="/prediction">Click here for more details and to participate</a>
 
 
-<h2><a name="visualization" href="visualization"> Visualization Challenge</a></h2>
+<h2>Visualization Challenge</h2>
 
 <p>
 The goal is to visualize the taxi  data in an informative, beautiful, or surprising way.  We are particularly interested in visualizations that contrast or compare taxi/public transportation ridership in Downtown and relate them  to nearby events and locales.  Visualizations may include maps, animations or static graphics and ideally should reveal new or interesting trends and patterns.
@@ -75,11 +81,11 @@ scientists, and leaders from the city of Boston's transportation departments.
 </p>
 
 <a href="/visualization">Click here for more details and to participate</a>
+</div> <!-- close section -->
 
+<div class="section">
+<div class="textseparator"><h1>The Datasets</h1></div>
 
-<h1>The Datasets</h1>
-
-We provide the following datasets on [this page](/datasets):
 
 <ul>
   <li><b>Boston taxi cab data</b>: Every trip starting from Boston proper.  Includes start and end datetime, street address (if available) and lat/lon coordinates.</li>
@@ -94,8 +100,14 @@ We provide the following datasets on [this page](/datasets):
 Participants are allowed and encouraged to find and use additional datasets, with the stipulation that the datasets are publicly  accessible.
 </p>
 
+<a href="/datasets">Click here to download the datasets</a>
+</div>
 
-<h1>Partners</h1>
+
+
+
+<div class="section">
+<div class="textseparator"><h1>Partners</h1></div>
 
 We are especially grateful to  our data parters who made this challenge possible.
 These include:
@@ -109,5 +121,7 @@ These include:
 </ul>
 
 <h2> Judging Panel</h2>
+
+</div>
 
 {% endblock %}

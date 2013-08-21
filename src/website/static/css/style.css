@@ -1,24 +1,155 @@
 @import url(http://fonts.googleapis.com/css?family=Lato|Noto+Serif|Magra);
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
-
-
-html{
-background: white;
-font-family: open sans, helvetica, arial;
+body {
+  margin: 0px;
+  padding: 0px;
+  background: #fcfcfc;
+  font-size: 12pt;
+  font-family: open sans, helvetica, arial;
 }
-
-body{
-	width: 900px;
-	margin: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	background: #FAFAFA;
+a,
+a:visited {
+  font-weight: 700;
+  font-size: bigger;
+  color: #357097;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style-position: outside;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  margin-bottom: 0.8em;
+}
+nav {
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   background: white;
   font-size: 12pt;
 }
+nav .logo {
+  float: left;
+  font-size: 15pt;
+  padding: 12px 45px;
+}
+nav .nav-links {
+  float: right;
+}
+nav .nav-links li {
+  display: block;
+  float: left;
+  font-weight: 600;
+}
+nav .nav-links li a {
+  color: #1d75b9;
+  padding: 25px 45px;
+}
+nav .nav-links li a:visited {
+  color: #7fadf1;
+}
+.main {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 50px;
+  z-index: 500;
+}
+.container {
+  width: 940px;
+  height: auto;
+  overflow: hidden;
+  margin: 0px auto;
+}
+.content {
+  width: 900px;
+  font-size: 15pt;
+  line-height: 20pt;
+  margin: 0px auto;
+  margin-top: 2em;
+  padding: 0px;
+}
+.content h1,
+.content h2 {
+  font-size: 23pt;
+  display: block;
+  text-align: center;
+  font-family: Lato;
+  border: none;
+}
+.content h2 {
+  color: grey;
+  font-size: 17pt;
+}
+.content .heading {
+  width: 750px;
+  font-size: 17pt;
+  margin: 0px auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.content .section {
+  width: 800px;
+  margin-bottom: 80px;
+}
+.infobox {
+  width: 900px;
+  background: white;
+  margin: 0px auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.photo {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 130px;
+}
+.photo .image {
+  width: 100%;
+  height: 130px;
+  background-image: url('/static/img/boston.png');
+  background-size: cover;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.textseparator {
+  background: url(/static/img/pixel.png) repeat-x left center;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+.textseparator h1,
+.textseparator h2 {
+  padding: 0 .25em;
+  display: inline;
+  background: #fcfcfc;
+}
+.seperator {
+  height: 26px;
+  max-width: 871px;
+  background: url('/static/img/medium-seperator.jpg');
+  margin: auto;
+  padding: 10px;
+}
 table {
-    font-size: 12pt;
-    border-collapse: collapse;
+  font-size: 12pt;
+  border-collapse: collapse;
 }
 table td {
   padding: 0px;
@@ -28,7 +159,6 @@ table th {
   border-bottom: 3px solid #e9e9e9;
   padding: 1em;
 }
-
 table.dataset {
   width: 100%;
   background: #f8f8f8;
@@ -45,40 +175,35 @@ table.dataset td {
 table.dataset td.datasetname {
   font-weight: bold;
 }
-
-
 table.register {
   width: 100%;
 }
-table.register td, table.register th {
+table.register td,
+table.register th {
   border-bottom: none;
 }
 table.register th {
   width: 13em;
 }
-
 table.register input {
   border: 1px solid #eee;
   width: 100%;
   font-size: 15pt;
 }
-
 form {
   background: #fff7e8;
   width: 100%;
   padding: 2em;
   text-align: center;
-
 }
-
 form textarea {
   width: 100%;
   height: 10em;
   border: 1px solid #e9e9e9;
   font-size: 12pt;
 }
-
-button, input[type="submit"] {
+button,
+input[type="submit"] {
   font-size: 15pt;
   width: 100%;
   padding: .75em;
@@ -90,192 +215,89 @@ button, input[type="submit"] {
   border-right: 1px solid #5596B0;
   border-bottom: 1px solid #5596B0;
 }
-
 code {
   font-family: Courier New;
   font-size: 10pt;
   color: #556;
   color: #357097;
 }
-
-a, a:visited {
-  font-weight: 700;
-  font-size: bigger;
-	color: #357097;
-  text-decoration: none;
-}
-
-ul, ol { list-style-position: outside; }
-ul { list-style-type: circle; }
-ol { }
-li { margin-bottom: 0.8em }
-
-h1{
-	position: relative;
-	margin-top: 5ex;
-	font-weight: bold;
-	border-bottom: 1px solid #c7c7c7;
-	font-size: 1.5em;
-  margin-left: 0px;
-}
-
-h2{
-	position: relative;
-	margin-top: 5ex;
-	margin-bottom: 0.5ex;
-	font-size: 1.2em;
-	font-weight: 600;
-}
-
-h3{
-	position: relative;
-	margin-top: 2ex;
-	margin-bottom: 0.5ex;
-	font-size: 1em;
-	font-weight: 600;
-}
-
-table {
-/*    font-size: 10pt; */
-}
-table.row { }
-table.row td {
-    padding: 10px;
-}
-
-
-
-.header {
-	padding: 0px;
-	margin: 0px;
-	position: relative;
-  background: white;
-	padding: 5px;
-  padding-bottom: 0px;
-  color: bluesteel;
-}
-.header h1, .header h2 {
-  margin-top: 1em;
-}
-.header .image {
-  width: 100%;
-  background-image:url('/static/images/boston.png');
-  background-size: cover;
-  opacity: 0.4;
-  height: 100px;
-  width: 100%;
-  display: block;
-  clear: both;
-  margin-top: 10px;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-
-.nav {
-	margin: 0px;
-}
-
-.nav a {
-	margin-right: 5px;
-  color; rgb(29, 117, 185);
-  text-decoration: none;
-}
-
-.nav a:visited {
-  color: rgb(127, 173, 241);
-}
-
 .footer {
-	margin-top: 20px;
+  margin-top: 20px;
   padding-top: 20px;
-	font-size: 9pt;
-	color: black;
-	text-align: center;
-	padding: 3px;
-	position: relative;
-	clear: both;
-	background: white;
+  font-size: 9pt;
+  color: black;
+  text-align: center;
+  padding: 3px;
+  position: relative;
+  clear: both;
+  background: white;
 }
-
-
-.main {
-	margin: 10px;
-  margin-top: 1em;
+@media (max-width: 1200px) {
+  nav {
+    font-size: 10pt;
+  }
+  nav .logo {
+    font-size: 15pt;
+    padding: 12px 10px;
+  }
+  nav .nav-links li a {
+    padding: 25px 10px;
+  }
+  .container {
+    width: 750px;
+  }
+  .content {
+    width: 750px;
+    font-size: 14pt;
+  }
+  .content h1,
+  .content h2 {
+    font-size: 20pt;
+  }
+  .content .heading,
+  .content .section {
+    width: 500px;
+    font-size: 17pt;
+  }
+  .content .section {
+    width: 750px;
+    font-size: 14pt;
+  }
 }
-
-.main .section {
-  padding-left: 1em;
+@media (max-width: 800px) {
+  nav {
+    font-size: 14pt;
+  }
+  nav .logo {
+    display: none;
+  }
+  nav .nav-links {
+    float: none;
+    text-align: center;
+  }
+  nav .nav-links li a {
+    padding: 25px 4px;
+  }
+  .container {
+    width: 85%;
+  }
+  .content {
+    width: 85%;
+    font-size: 12pt;
+  }
+  .content h1,
+  .content h2 {
+    font-size: 15pt;
+  }
+  .content .heading {
+    width: 65%;
+    font-size: 14pt;
+  }
+  .content .section {
+    width: 100%;
+    font-size: 13pt;
+  }
+  .infobox {
+    width: 85%;
+  }
 }
-
-.main .section p {
-  padding-left: 1em;
-}
-
-.section ol li i {
-  display: block;
-  font-weight: bold;
-}
-
-
-
-
-#ggscreen { width: 100%; }
-
-#mypic {
-	width: 100px;
-	height: 100px;
-	background-image:url(../images/me.jpg);
-}
-
-#mypic:hover {
-	background-image:url(../images/me_awake.png);
-}
-
-
-
-@media  (max-width:1300px) {
-    body {
-        width: 700px;
-        font-size: 12pt;
-    }
-    table {
-        font-size: 12pt;
-    }
-}
-
-
-@media  (max-width:900px) {
-    body {
-        width: 500px;
-        font-size: 12pt;
-    }
-    table {
-      font-size: 12pt;
-    }
-    table.row td {
-      padding-left: 0px;
-      padding: 0px;
-    }
-    h1, h2, h3 {
-      margin: 5px;
-      padding: 0px;
-      margin-top: 1em;
-    }
-    li { margin-bottom: 0px; }
-    .main.section {
-      padding-left: .5em;
-    }
-    .main.section.p {
-      padding-left: .5em;
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
-
-
-    .header nav {
-      padding-left: 1.5em;
-    }
-    .thumb { display: none; }
-}
-
