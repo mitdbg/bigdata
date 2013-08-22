@@ -4,7 +4,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  background: #fcfcfc;
+  background: #f9f9f6;
   font-size: 12pt;
   font-family: open sans, helvetica, arial;
 }
@@ -33,14 +33,14 @@ nav {
   right: 0px;
   height: 50px;
   z-index: 1000;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   background: white;
-  font-size: 12pt;
+  font-size: 13pt;
 }
 nav .logo {
   float: left;
   font-size: 15pt;
-  padding: 12px 45px;
+  padding: 12px 0px 12px 0px;
 }
 nav .nav-links {
   float: right;
@@ -52,7 +52,7 @@ nav .nav-links li {
 }
 nav .nav-links li a {
   color: #1d75b9;
-  padding: 25px 45px;
+  padding: 25px 25px;
 }
 nav .nav-links li a:visited {
   color: #7fadf1;
@@ -80,14 +80,16 @@ nav .nav-links li a:visited {
 .content h1,
 .content h2 {
   font-size: 23pt;
-  display: block;
-  text-align: center;
   font-family: Lato;
+  text-align: center;
+  display: block;
   border: none;
 }
 .content h2 {
   color: grey;
   font-size: 17pt;
+  font-family: Lato;
+  margin-top: 40px;
 }
 .content .heading {
   width: 750px;
@@ -99,6 +101,13 @@ nav .nav-links li a:visited {
 .content .section {
   width: 800px;
   margin-bottom: 80px;
+}
+.content .section ul {
+  padding-left: 0px;
+}
+.content .section ul li {
+  border-left: 6px solid #eee;
+  padding-left: 20px;
 }
 .infobox {
   width: 900px;
@@ -138,7 +147,7 @@ nav .nav-links li a:visited {
 .textseparator h2 {
   padding: 0 .25em;
   display: inline;
-  background: #fcfcfc;
+  background: #f9f9f6;
 }
 .seperator {
   height: 26px;
@@ -215,10 +224,11 @@ input[type="submit"] {
   border-right: 1px solid #5596B0;
   border-bottom: 1px solid #5596B0;
 }
-code {
+.code {
+  white-space: pre;
   font-family: Courier New;
   font-size: 10pt;
-  color: #556;
+  line-height: 13pt;
   color: #357097;
 }
 .footer {
@@ -238,7 +248,7 @@ code {
   }
   nav .logo {
     font-size: 15pt;
-    padding: 12px 10px;
+    padding: 12px 0px;
   }
   nav .nav-links li a {
     padding: 25px 10px;
@@ -254,10 +264,10 @@ code {
   .content h2 {
     font-size: 20pt;
   }
-  .content .heading,
-  .content .section {
+  .content .heading {
     width: 500px;
     font-size: 17pt;
+    line-height: 25pt;
   }
   .content .section {
     width: 750px;
