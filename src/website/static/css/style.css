@@ -116,6 +116,7 @@ nav .nav-links li a:visited {
 }
 .content ul.submission-list li {
   clear: both;
+  border: none;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 .content ul.submission-list li:first-of-type {
@@ -144,7 +145,7 @@ nav .nav-links li a:visited {
   font-size: 12pt;
 }
 .infobox {
-  width: 900px;
+  width: 800px;
   background: white;
   margin: 0px auto;
   margin-top: 20px;
