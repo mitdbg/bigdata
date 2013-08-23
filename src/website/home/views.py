@@ -4,16 +4,13 @@ from django.http import HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render, render_to_response
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 import misaka as m
 from markdown import Markdown
+from home.models import *
+from home.util import *
 
-
-CORRECT_DEMANDS = {
-  1: 90,
-  2: 100, 
-  3: 205
-}
 
 
 def render_md(request, mdfilepath, context=None):
@@ -65,45 +62,26 @@ def prediction(request):
 def visualization(request):
   return render_md(request, "./templates/home/visualization.md")
 
+def profile(request):
+  return render(request, "home/user_profile.html", {})
+
 @login_required
 def submit(request):
   if request.method == 'POST':
-    uid = request.POST.get('uid', None)
-    submission = request.POST.get('submission', None)
-    demands = parse(submission)
-    score = compute_score(demands)
+    user = request.user
+    text = request.POST.get('submission', None)
+    submit_type = request.POST.get('submit_type', 1) # 1 for test
+    prediction = parse(text)
+    score = compute_score(prediction)
 
-    # TODO: store the score
-  return render(request, "home/index_template.html", {'content': score})
+    submission = Submission(
+      user = user,
+      text = text,
+      score = score,
+      submit_type = submit_type
+    )
+    submission.save()
+    return render(request, "home/user_profile.html", {'score': score, 'text': text})
+  return render(request, "home/user_profile.html", {})
 
-def compute_score(demands):
-  sqerrs = []
-  for key in CORRECT_DEMANDS:
-    trueval = CORRECT_DEMANDS[key]
-    if key in  demands:
-      estval = demands[key]
-      sqerrs.append(float(trueval - estval) ** 2)
 
-  return sum(sqerrs) ** 0.5
-
-def parse(submission=""):
-  """
-  ARGS:
-  submission is as string
-
-  RETURN:
-  dictionary of location -> demand number 
-  """
-  demands = {}
-  try:
-    lines = submission.split("\n")
-    for line in lines:
-      line = line.strip()
-      if not line: continue
-      tokens = line.split(" ")
-      locid = int(tokens[0])
-      demand = int(tokens[1])
-      demands[locid] = demand
-    return demands
-  except:
-    return {}

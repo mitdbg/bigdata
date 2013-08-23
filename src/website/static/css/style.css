@@ -109,6 +109,40 @@ nav .nav-links li a:visited {
   border-left: 6px solid #eee;
   padding-left: 20px;
 }
+.content ul.submission-list {
+  background: white;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.content ul.submission-list li {
+  clear: both;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+.content ul.submission-list li:first-of-type {
+  font-weight: bold;
+}
+.content ul.submission-list li:last-of-type {
+  box-shadow: none;
+}
+.content ul.submission-list .user,
+.content ul.submission-list .time,
+.content ul.submission-list .score,
+.content ul.submission-list .text {
+  float: left;
+  padding: 5px 10px;
+}
+.content ul.submission-list .user {
+  width: 10em;
+}
+.content ul.submission-list .time {
+  width: 10em;
+}
+.content ul.submission-list .score {
+  width: 6em;
+}
+.content ul.submission-list .text {
+  font-size: 12pt;
+}
 .infobox {
   width: 900px;
   background: white;
@@ -170,7 +204,7 @@ table th {
 }
 table.dataset {
   width: 100%;
-  background: #f8f8f8;
+  background: white;
   border: 1px solid #e9e9e9;
 }
 table.dataset td {
@@ -232,15 +266,14 @@ input[type="submit"] {
   color: #357097;
 }
 .footer {
-  margin-top: 20px;
-  padding-top: 20px;
+  width: 500px;
+  margin: 0px auto;
+  padding-top: 40px;
   font-size: 9pt;
   color: black;
   text-align: center;
-  padding: 3px;
   position: relative;
   clear: both;
-  background: white;
 }
 @media (max-width: 1200px) {
   nav {
@@ -272,6 +305,9 @@ input[type="submit"] {
   .content .section {
     width: 750px;
     font-size: 14pt;
+  }
+  .infobox {
+    width: 700px;
   }
 }
 @media (max-width: 800px) {

@@ -1,0 +1,23 @@
+{% if user.is_authenticated %}
+
+<h2>Your Past Submissions</h2>
+
+<ul class="infobox submission-list">
+  <li>
+    <div class="time">Time</div>
+    <div class="score">Score</div>
+    <div class="text">Prediction</div>
+    <div style="clear:both"></div>
+  </li>
+
+{% for s in user.submissions.all %}
+  <li>
+    <div class="time">{{s.tstamp|date:"M d P"}}</div>
+    <div class="score">{{s.score_str}}</div>
+    <div class="code text">{{s.text}}</div>
+    <div style="clear:both"></div>
+  </li>
+{% endfor %}
+</ul>
+
+{% endif %}

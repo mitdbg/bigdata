@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+  {% include "home/past_submissions.html" %}
+
+  {% include "home/prediction_test_form.html" %}
+
+
+{% else %}
+
+  Please <a href="/accounts/login">login or register</a>.
+
+{% endif %}
+{% endblock %}

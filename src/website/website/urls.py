@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     (r'^accounts/password_reset_complete/$', 'django.contrib.auth.views.password_reset_complete', {'template_name': 'home/index.html'}),
     #(r'^accounts/', include('registration.backends.simple.urls')),
     (r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^account$', 'home.views.profile', name='profile'),
     url(r'^', include('home.urls')),
 
 
