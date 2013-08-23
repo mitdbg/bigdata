@@ -3,14 +3,37 @@
 {% block content %}
 {% if user.is_authenticated %}
 
+
+<div class="section">
+<p>
+Hi {{user.username}}, this is your profile page.
+</p>
+</div>
+
+<div class="section">
+<div class="textseparator"><h1>Prediction Challenge</h1></div>
+
   {% include "home/past_submissions.html" %}
 
   {% include "home/prediction_test_form.html" %}
 
+</div>
+
+<div class="section">
+<div class="textseparator"><h1>Visualization Challenge</h1></div>
+
+<p>
+  TBA
+</p>
+
+</div>
+
 
 {% else %}
 
+<div class="section">
   Please <a href="/accounts/login">login or register</a>.
+</div>
 
 {% endif %}
 {% endblock %}

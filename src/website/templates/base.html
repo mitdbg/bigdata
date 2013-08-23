@@ -16,6 +16,7 @@
       <li><a href="/index"> Overview</a></li>
       <li><a href="/datasets"> Datasets</a></li>
       {% if user.is_authenticated %}
+        <li><a href="/account">Profile</a></li>
         <li><a href="/accounts/logout">Logout</a></li>
       {% else %}
         <li><a href="/accounts/register">Register</a></li>

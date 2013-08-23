@@ -1,4 +1,4 @@
-{% if user.is_authenticated %}
+{% if user.is_authenticated and user.submissions.all %}
 
 <h2>Your Past Submissions</h2>
 
@@ -19,5 +19,6 @@
   </li>
 {% endfor %}
 </ul>
+
 
 {% endif %}
