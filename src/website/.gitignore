@@ -1,0 +1,4 @@
+website/settings.py
+*~
+*.pyc
+db.db

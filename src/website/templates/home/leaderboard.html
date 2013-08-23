@@ -1,22 +1,23 @@
 
-<h2>Leaderboard</h2>
+{% if submissions %}
+  <h2>Leaderboard</h2>
 
-<ul class="infobox submission-list">
-  <li>
-    <div class="user">User</div>
-    <div class="time">Time</div>
-    <div class="score">Score</div>
-    <div style="clear:both"></div>
-  </li>
+  <ul class="infobox submission-list">
+    <li>
+      <div class="user">User</div>
+      <div class="time">Time</div>
+      <div class="score">Score</div>
+      <div style="clear:both"></div>
+    </li>
 
-{% for s in submissions %}
-  <li>
-    <div class="user">{{s.user.username}}</div>
-    <div class="time">{{s.tstamp|date:"M d P"}}</div>
-    <div class="score">{{s.score_str}}</div>
-    <div style="clear:both"></div>
-  </li>
-{% endfor %}
-</ul>
+  {% for s in submissions %}
+    <li>
+      <div class="user">{{s.user.username}}</div>
+      <div class="time">{{s.tstamp|date:"M d P"}}</div>
+      <div class="score">{{s.score_str}}</div>
+      <div style="clear:both"></div>
+    </li>
+  {% endfor %}
+  </ul>
 
-
+{% endif %}
