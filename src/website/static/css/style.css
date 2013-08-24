@@ -231,6 +231,7 @@ table.register th {
 }
 table.register .errorlist {
   color: #ff2c2c;
+  text-align: left;
 }
 table.register .errorlist li {
   border: none;
