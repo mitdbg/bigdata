@@ -5,6 +5,8 @@
 <div class="section">
   <h1>Get the data</h1>
 
+{% if user.is_authenticated %}
+
   <p>We provide the following datasets for your use in the challenges.  {% if not user.is_authenticated %}Please <a href="/accounts/login">login</a> to download the files.  {% endif %}</p>
 
   <p>The goal is to produce the best result with the data we provide, not to find other sets that may improve your ability to predict.  Please restrict yourself to using ONLY these data sets.</p>
@@ -64,7 +66,11 @@
     </tr>
   </tbody></table>
 
+{% else %}
 
+Please <a href="/accounts/login">login</a> or <a href="/accounts/register">register</a> to download the datasets.
+
+{% endif %}
 </div>
 
 
