@@ -1,5 +1,5 @@
 import os
-ROOTDIR = os.path.abspath(os.path.curdir)
+ROOTDIR = os.path.join(os.path.realpath(os.path.dirname(__file__)), '..')
 # Django settings for website project.
 
 DEBUG = True
