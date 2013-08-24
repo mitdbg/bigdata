@@ -11,5 +11,12 @@ def infobox(user):
 
 @register.inclusion_tag('home/leaderboard.html', takes_context=True)
 def leaderboard(context):
-  topk = Submission.objects.order_by('score')[:10]
+  uids = set()
+  topk = []
+  for s in Submission.objects.order_by('score'):
+    if len(uids) >= 10:
+      break
+    if s.user.id in uids:
+      continue
+    topk.append(s)
   return {'submissions': topk}

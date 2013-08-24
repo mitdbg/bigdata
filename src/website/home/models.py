@@ -8,11 +8,12 @@ FINAL = 10
 
 class SubManager(models.Manager):
   use_for_related_fields = True
+
   def most_recent(self):
     return self.all()[:5]
-
+  
   def all(self):
-    return self.order_by('-tstamp')
+    return self.order_by('tstamp')
 
 
 class Submission(models.Model):
