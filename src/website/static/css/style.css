@@ -229,6 +229,12 @@ table.register th {
 table.register th {
   width: 13em;
 }
+table.register .errorlist {
+  color: #ff2c2c;
+}
+table.register .errorlist li {
+  border: none;
+}
 table.register input {
   border: 1px solid #eee;
   width: 100%;
