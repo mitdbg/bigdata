@@ -2,10 +2,10 @@
 {% block content %}
 
 
+{% if user.is_authenticated %}
+
 <div class="section">
   <h1>Get the data</h1>
-
-{% if user.is_authenticated %}
 
   <p>We provide the following datasets for your use in the challenges.  {% if not user.is_authenticated %}Please <a href="/accounts/login">login</a> to download the files.  {% endif %}</p>
 
@@ -16,62 +16,92 @@
   <table class="dataset">
     <tbody><tr>
       <th>Dataset</th>
-      <th>File Name</th>
-      <th>Format</th>
+      <th>Short Description</th>
+      <th>Link</th>
     </tr>
     <tr>
-      <td class="datasetname" rowspan="2">Taxi</td>
-      <td>Train</td>
+      <td class="datasetname" rowspan="3">Taxi</td>
+      <td>Training.  <div>Subset of the taxi data from XXX to YYY</div></td>
       <td><a href="">.zip</a> (zip'd csv file)</td>
     </tr>
     <tr>
-      <td>Test</td>
-      <td><a href="">.zip</a> (zip'd csv file)</td>
+      <td>Test 1</td>
+      <td>Not available until XXX</td>
     </tr>
     <tr>
-      <td class="datasetname" rowspan="2">MBTA</td>
-      <td>Train</td>
-      <td><a href="">.zip</a> (zip'd csv file)</td>
+      <td>Final Test</td>
+      <td>Not available until XXX</td>
     </tr>
     <tr>
-      <td>Test</td>
-      <td><a href="">.zip</a> (zip'd csv file)</td>
+      <td class="datasetname" rowspan="1">MBTA</td>
+      <td>All</td>
+      <td><a href="https://s3.amazonaws.com/mitbigdata/datasets/mbta.tar.gz">mbta.tar.gz</a></td>
     </tr>
     <tr>
-      <td class="datasetname" rowspan="2">Twitter</td>
-      <td>Train</td>
-      <td><a href="">.zip</a> (zip'd csv file)</td>
+      <td class="datasetname" rowspan="1">Twitter</td>
+      <td>All</td>
+      <td><a href="">.zip</a></td>
     </tr>
     <tr>
-      <td>Test</td>
-      <td><a href="">.zip</a> (zip'd csv file)</td>
+      <td class="datasetname" rowspan="1">Weather</td>
+      <td>All</td>
+      <td><a href="https://s3.amazonaws.com/mitbigdata/datasets/wunderground.json.gz">wunderground.json.gz</a></td>
     </tr>
     <tr>
-      <td class="datasetname" rowspan="2">Weather</td>
-      <td>Train</td>
-      <td><a href="">.zip</a> (zip'd csv file)</td>
-    </tr>
-    <tr>
-      <td>Test</td>
-      <td><a href="">.zip</a> (zip'd csv file)</td>
-    </tr>
-    <tr>
-      <td class="datasetname" rowspan="2">Events</td>
-      <td>Train</td>
-      <td><a href="">.zip</a> (zip'd csv file)</td>
-    </tr>
-    <tr>
-      <td>Test</td>
-      <td><a href="">.zip</a> (zip'd csv file)</td>
+      <td class="datasetname" rowspan="1">Events</td>
+      <td>All</td>
+      <td><a href="https://s3.amazonaws.com/mitbigdata/datasets/events.csv">events.csv</a></td>
     </tr>
   </tbody></table>
 
+</div>
+
+<div class="section">
+<h1>Dataset Descriptions</h1>
+
+<h2>Taxi</h2>
+<p>
+  The taxi data contains a set of "pickupX.csv" and "dropoffX.csv" files, where X is the month of each dataset.
+  The files contain time, address, and locations of every pickup and dropoff in central boston.
+</p>
+
+<h2>MBTA</h2>
+<p>
+This contains AFC and OFC files. 
+</p>
+<p>AFC files contain information about bus ridership (every time a rider pays the driver).  The station information is inferred so it may not be accurate.  
+</p>
+<p>OFC files contain swipe information for the T stations and are accurate.</p>
+<p>
+The Stops.rpt file contains station metadata information.
+</p>
+
+<h2>Twitter</h2>
+<p>TBA</p>
+
+<h2>Weather</h2>
+<p>
+  This contains a JSON encoded dump of Weather Underground's historical weather data in boston.  The data is 
+  encoded as a list of JSON objects, where each object is the hourly data for one day.  See <a href="http://www.wunderground.com/weather/api/d/docs?d=data/history">the API documentation</a> for more details.
+</p>
+
+<h2>Events</h2>
+<p>
+  This contains the location, time, and description information about all Boston events.
+</p>
+</div>
+
+
+
 {% else %}
+
+<div class="section">
+  <h1>Get the data</h1>
 
 Please <a href="/accounts/login">login</a> or <a href="/accounts/register">register</a> to download the datasets.
 
-{% endif %}
 </div>
+{% endif %}
 
 
 
