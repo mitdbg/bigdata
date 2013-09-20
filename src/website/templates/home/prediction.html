@@ -10,22 +10,30 @@
 
 <div class="section">
   <div class="textseparator"><h1>The Contest</h1></div>
+
   <p>
-  We have collected XXX months worth of data (see below for descriptions
-  of the datasets).  We will provide XXX weeks worth of training data
-  and draw the test data randomly from XXX weeks of data.
-  </p>
+  We have collected 1 month worth of data (see below for descriptions
+  of the datasets).  In this challenge we will give you all of the data
+  except for several days of taxi data that we leave out.  Your job is 
+  to predict the total number of taxi trips within a 2 hour time span at
+  several locations in downtown Boston.</p>
 
   <p style="text-align: center"><a href="/datasets"><button>Download the datasets here</button></a></p>
 
-  <p> Demand prediction will be within a specified (0.1 mile) radius
-  of key locations in Boston during a specified half hour time
-  window  (e.g., between 11 and 11:30pm on March 15, 2013 at the
-  intersection of Summer St and Tremont St.).</p>
+  <h2>Specification</h2>
 
-  <p> The prize will be awarded to the team that most accurately
-  predicts (with minimum mean-squared error) ridership at a provided
-  set of test locations based on the test data.  </p>
+  <p>The time spans will be drawn from the days of taxi data that we
+  left out
+
+  <p>The locations will be specified as latitude, longitude points,
+  and the prediction will be within a 250 meter radius of those points.
+
+
+  <p>We will give you around 50 location, timespan pairs.  Your score will
+  be computed as the mean-squared error of your predictions against the 
+  ground truth.
+
+  <h2>Timing</h2>
 
   <p>The prediction challenge will XXX.  We will provide a training
   dataset for you to construct models.  Then on YYY date we will
