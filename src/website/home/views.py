@@ -88,7 +88,7 @@ def submit_prediction(request):
 def submit_vis(request):
   if request.method == 'POST':
     user = request.user
-    url = request.url
+    url = request.POST.get('url', None)
 
     submission = VisSubmission(
         user = user,

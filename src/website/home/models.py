@@ -14,7 +14,7 @@ class SubManager(models.Manager):
     return self.all()[:5]
   
   def all(self):
-    return self.order_by('tstamp')
+    return self.order_by('-tstamp')
 
 
 class Submission(models.Model):
@@ -37,6 +37,7 @@ class Submission(models.Model):
 
 
 class VisSubmission(models.Model):
+  objects = SubManager()
 
   user = models.ForeignKey(User, related_name="vis_submissions")
   url = models.CharField(max_length=1280, null=False)

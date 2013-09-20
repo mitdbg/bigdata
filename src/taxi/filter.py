@@ -75,10 +75,24 @@ if __name__ == '__main__':
   months = ['10']
   days = range(1, 30)
   days = random.sample(days, 4)
-  days = [['2012-10-%s 00:00:01' % d, '2012-10-%s 23:59:59' % d] for d in days]
+  days = ['2012-10-%s' % d for d in days]
+  dayranges = [['%s 00:00:01' % d, '%s 23:59:59' % d] for d in days]
 
-  f.query(latlons[:0], days)
-  f.negate_query(latlons[:0], days)
+  i = 0
+  for day in days:
+    hour = random.randint(0, 22)
+    for latlon in latlons:
+      if random.random() < 0.3:
+        print "%d,%s,%d,%d,%f,%f" % (
+            i, 
+            day, hour, hour+2,
+            latlon[0], latlon[1]
+        )
+        i += 1
+
+
+  f.query(latlons[:0], dayranges)
+  f.negate_query(latlons[:0], dayranges)
   exit()
 
     
