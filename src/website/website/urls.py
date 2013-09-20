@@ -1,8 +1,13 @@
 from django.conf.urls import patterns, include, url
+from registration.forms import RegistrationFormTermsOfService
+from registration.backends.default.views import RegistrationView
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
+
+class MyRegistrationView(RegistrationView):
+  form_class = RegistrationFormTermsOfService
 
 urlpatterns = patterns('',
     # Examples:
@@ -13,6 +18,8 @@ urlpatterns = patterns('',
     (r'^accounts/password_reset_done/$', 'django.contrib.auth.views.password_reset_done', {'template_name': 'home/index.html'}),
     (r'^accounts/password_reset_complete/$', 'django.contrib.auth.views.password_reset_complete', {'template_name': 'home/index.html'}),
     #(r'^accounts/', include('registration.backends.simple.urls')),
+
+    (r'^accounts/register/$', MyRegistrationView.as_view()),
     (r'^accounts/', include('registration.backends.default.urls')),
     url(r'^account$', 'home.views.profile', name='profile'),
     url(r'^', include('home.urls')),

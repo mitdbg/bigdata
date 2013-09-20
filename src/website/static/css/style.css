@@ -219,27 +219,37 @@ table.dataset td {
 table.dataset td.datasetname {
   font-weight: bold;
 }
-table.register {
+table.register tbody {
   width: 100%;
 }
-table.register td,
-table.register th {
+table.register tbody td,
+table.register tbody th {
   border-bottom: none;
-}
-table.register th {
-  width: 13em;
-}
-table.register .errorlist {
-  color: #ff2c2c;
   text-align: left;
+  vertical-align: top;
+  padding: 1em;
 }
-table.register .errorlist li {
-  border: none;
-}
-table.register input {
+table.register tbody td input,
+table.register tbody th input {
   border: 1px solid #eee;
   width: 100%;
   font-size: 15pt;
+}
+table.register tbody td input[type=checkbox],
+table.register tbody th input[type=checkbox] {
+  width: auto;
+}
+table.register tbody th {
+  width: 13em;
+  text-align: right;
+  vertical-align: top;
+}
+table.register tbody .errorlist {
+  color: #ff2c2c;
+  text-align: left;
+}
+table.register tbody .errorlist li {
+  border: none;
 }
 form {
   background: #fff7e8;

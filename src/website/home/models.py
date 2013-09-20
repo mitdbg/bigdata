@@ -6,6 +6,7 @@ from home.util import *
 TEST = 1
 FINAL = 10
 
+
 class SubManager(models.Manager):
   use_for_related_fields = True
 
@@ -34,3 +35,9 @@ class Submission(models.Model):
     return parse(self.text)
 
 
+
+class VisSubmission(models.Model):
+
+  user = models.ForeignKey(User, related_name="vis_submissions")
+  url = models.CharField(max_length=1280, null=False)
+  tstamp = models.DateTimeField(auto_now_add=True)

@@ -252,26 +252,38 @@ table.dataset {
 }
 
 table.register {
-  width: 100%;
-
-  td, th {
-    border-bottom: none;
-  }
-  th {
-    width: 13em;
-  }
-  .errorlist {
-    color: rgb(255, 44, 44);
-    text-align:left;
-    li {
-      border: none;
-    }
-  }
-
-  input {
-    border: 1px solid #eee;
+  tbody {
     width: 100%;
-    font-size: 15pt;
+
+    td, th {
+      border-bottom: none;
+      text-align: left;
+      vertical-align: top;
+      padding: 1em;
+
+      input {
+        border: 1px solid #eee;
+        width: 100%;
+        font-size: 15pt;
+      }
+      input[type=checkbox] {
+        width: auto;
+      }
+
+    }
+    th {
+      width: 13em;
+      text-align: right;
+      vertical-align: top;
+    }
+    .errorlist {
+      color: rgb(255, 44, 44);
+      text-align:left;
+      li {
+        border: none;
+      }
+    }
+
   }
 }
 

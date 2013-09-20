@@ -66,7 +66,7 @@ def profile(request):
   return render(request, "home/user_profile.html", {})
 
 @login_required
-def submit(request):
+def submit_prediction(request):
   if request.method == 'POST':
     user = request.user
     text = request.POST.get('submission', None)
@@ -82,6 +82,21 @@ def submit(request):
     )
     submission.save()
     return render(request, "home/user_profile.html", {'score': score, 'text': text})
+  return render(request, "home/user_profile.html", {})
+
+@login_required
+def submit_vis(request):
+  if request.method == 'POST':
+    user = request.user
+    url = request.url
+
+    submission = VisSubmission(
+        user = user,
+        url = url
+    )
+    submission.save()
+
+    return render(request, "home/user_profile.html", {})
   return render(request, "home/user_profile.html", {})
 
 
