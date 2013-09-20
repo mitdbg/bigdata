@@ -25,17 +25,18 @@
       <th>Download Link</th>
     </tr>
     <tr>
-      <td class="datasetname" rowspan="3">Taxi</td>
+      <td class="datasetname" rowspan="2">Taxi Pickups</td>
       <td>Training.  <div>Subset of the taxi data from XXX to YYY</div></td>
-      <td>{% if user.is_authenticated %}<a href="https://s3.amazonaws.com/mitbigdata/datasets/pickups_train">pickups_train (47MB)</a>{%else%}<a href="/accounts/login">login to download</a>{% endif %}</td>
+      <td>{% if user.is_authenticated %}<a href="https://s3.amazonaws.com/mitbigdata/datasets/pickups_train.tsv.gz">pickups_train.tsv.gz (52MB)</a>{%else%}<a href="/accounts/login">login to download</a>{% endif %}</td>
     </tr>
     <tr>
-      <td>Test 1</td>
+      <td>Trial 1</td>
       <td>Not available until XXX</td>
     </tr>
     <tr>
-      <td>Final Test</td>
-      <td>Not available until XXX</td>
+      <td class="datasetname" rowspan="1">Taxi Dropoffs</td>
+      <td>All</td>
+      <td>{% if user.is_authenticated %}<a href="https://s3.amazonaws.com/mitbigdata/datasets/taxi_dropoffs.csv.gz">taxi_dropoffs.csv.gz (24M)</a>{%else%}<a href="/accounts/login">login to download</a>{% endif %}</td>
     </tr>
     <tr>
       <td class="datasetname" rowspan="1">MBTA</td>
@@ -64,11 +65,22 @@
 <div class="section">
 <h1>Dataset Descriptions</h1>
 
-<h2>Taxi</h2>
+<h2>Taxi Pickups</h2>
 <p>
-  The taxi data contains a set of "pickupX.csv" and "dropoffX.csv" files, where X is the month of each dataset.
-  The files contain time, address, and locations of every pickup and dropoff in central boston.
+  The taxi data contains pickup training data. Each file is tab delimited containing:
+  
+  <div class="code">
+    [random id],[timestamp],[address],[longitude],[latitude] </div>
 </p>
+
+<h2>Taxi Dropoffs</h2>
+<p>
+  The taxi dropoff data is a CSV file containing
+  
+  <div class="code">
+    [random id],[timestamp],[address],[longitude],[latitude] </div>
+</p>
+
 
 <h2>MBTA</h2>
 <p>
