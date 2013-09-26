@@ -267,9 +267,10 @@ button,
 input[type="submit"] {
   font-size: 15pt;
   width: 60%;
-  justify: center;
+  text-align: center;
   padding: .25em;
   color: white;
+  font-weight: bold;
   border-radius: 2px;
   background-color: #0244FF;
   border-top: 1px solid white;
