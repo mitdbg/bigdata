@@ -270,6 +270,7 @@ input[type="submit"] {
   text-align: center;
   padding: .25em;
   color: white;
+  display:block;
   font-weight: bold;
   border-radius: 2px;
   background-color: #0244FF;
