@@ -12,34 +12,32 @@
   <div class="textseparator"><h1>The Contest</h1></div>
 
   <p>
-  We have collected 1 month worth of data (see below for descriptions
+  We have collected 2 months worth of data (see below for descriptions
   of the datasets).  In this challenge we will give you all of the data
   except for several days of taxi data that we leave out.  Your job is 
-  to predict the total number of taxi trips within a 2 hour time span at
+  to predict the total number of taxi trips within a number different 2 hour time spans during these omitted days at
   several locations in downtown Boston.</p>
-
-  <p style="text-align: center"><a href="/datasets"><button>Download the datasets here</button></a></p>
-
-  <h2>Specification</h2>
-
-  <p>The time spans will be drawn from the days of taxi data that we
-  left out
 
   <p>The locations will be specified as latitude, longitude points,
   and the prediction will be within a 250 meter radius of those points.
 
-
   <p>We will give you around 50 location, timespan pairs.  Your score will
-  be computed as the mean-squared error of your predictions against the 
-  ground truth.
+  be computed as the root-mean-squared error of your predictions against the 
+  ground truth.  That is, given a your estimates  <img src="http://latex.codecogs.com/svg.latex?\Hat{p_1}\ldots \Hat{p_n}" border="0"/> for data points
+   <img src="http://latex.codecogs.com/svg.latex?p_1\ldots p_n" border="0"/>
+  we will compute:<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://latex.codecogs.com/svg.latex?\sqrt{\sum_{i\in1\ldots n}{(p_i-\Hat{p_i})^2}}" border="0"/></p>
+
+
+
+    <p style="text-align: center"><a href="/datasets"><button>Download the datasets here</button></a></p>
 
   <h2>Timing</h2>
 
-  <p>The prediction challenge will XXX.  We will provide a training
-  dataset for you to construct models.  Then on YYY date we will
-  release an initial test dataset and provide N locations, specified
-  by lat, lon bounding boxes and a time window, for you to predict
-  the number of taxi routes initiated within the window.  You can <a
+  <p>We will provide an initial training
+  dataset for you to construct models, along with an
+   an initial test dataset and set of N locations, specified
+  by lat, lon center coordinates and time, for you to predict
+  the number of taxi trips initiated within the two hour period following that time within a 250 m radius of the center point.  You can <a
   href="#submit">submit</a> predictions for this dataset as many times
   as you wish, and we will provide a leaderboard that updates your
   score on each submission to track contestant progress against each
@@ -47,8 +45,8 @@
   and has no effect on the final evaluation.</p>
 
   <p>In the last week of the competition, we will release the final test
-  dataset for which contestants will be ultimately compared.  You may
-  submit as many times as you wish but the final scores will be release
+  dataset on which contestants will be ultimately compared.  You may
+  submit as many times as you wish but the final scores will be released
   only at the end of the competition.</p>
 
 
@@ -61,15 +59,11 @@
 <div class="textseparator"><h1>Rules</h1></div>
 
 <p>
-In order to enter the MIT BigData Challenge (the “Contest”), you must agree to the Official Rules (“Rules”).   You agree that submission of an entry (“Entry”) to either the Prediction or Viz Challenge constitutes your full and unconditional agreement to the Rules, and you represent and warrant that you have read, understood, and agree to be bound by the Rules.
+In order to enter the MIT BigData Challenge (the "Contest"), you must agree to the Official Rules ("Rules").   You agree that submission of an entry ("Entry") to either the Prediction or Viz Challenge constitutes your full and unconditional agreement to the Rules, and you represent and warrant that you have read, understood, and agree to be bound by the Rules.
 <p>
 <a href="static/rules.pdf">Click here</a> to download a complete copy of the Rules in PDF format.
-<!--
 <p>
-<p>
-<font color="red">XXX we should require that people click a "I have read and agree to these rules" button before they can submit.</font>
-<p>
-A short summary of a few of the rules is provided for your convenience below.  However, you must agree to the <a href="static/rules.pdf">complete rules</a> to participate!
+A short summary of a few of the rules is provided for your convenience below. 
 
 <ul>
 <li>One account per participant, one participant must have an MIT certificate, and there is no limit to your team size.</li>
@@ -85,8 +79,6 @@ A short summary of a few of the rules is provided for your convenience below.  H
 <li> We reserve the right to disqualify any entry, and you agree not to hold us liable for anything in connection with the contest. </li>
 
 <li> We will provide the prize to the registered account holder;  teams are responsible for divvying up money amongst themselves. </li>
-
--->
 
 </div>
 
