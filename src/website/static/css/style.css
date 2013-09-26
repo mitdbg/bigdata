@@ -269,14 +269,14 @@ input[type="submit"] {
   width: 60%;
   text-align: center;
   padding: .25em;
-  color: white;
+  color: black;
   font-weight: bold;
   border-radius: 2px;
   background-color: #CED9F0;
   border-top: 1px solid white;
   border-left: 1px solid white;
-  border-right: 1px solid #5596B0;
-  border-bottom: 1px solid #5596B0;
+  border-right: 1px solid #0044FF;
+  border-bottom: 1px solid #0044FF;
 }
 .buttonHolder{ text-align: center; }
 
