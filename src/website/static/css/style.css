@@ -270,7 +270,6 @@ input[type="submit"] {
   text-align: center;
   padding: .25em;
   color: white;
-  display:block;
   font-weight: bold;
   border-radius: 2px;
   background-color: #0244FF;
@@ -279,6 +278,9 @@ input[type="submit"] {
   border-right: 1px solid #5596B0;
   border-bottom: 1px solid #5596B0;
 }
+.buttonHolder{ text-align: center; }
+
+
 .code {
   white-space: pre;
   font-family: Courier New;
