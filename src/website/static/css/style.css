@@ -252,7 +252,7 @@ table.register tbody .errorlist li {
   border: none;
 }
 form {
-  background: dark-gray;
+  background: #999999;
   width: 100%;
   padding: 2em;
   text-align: center;
