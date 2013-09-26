@@ -266,11 +266,11 @@ form textarea {
 button,
 input[type="submit"] {
   font-size: 15pt;
-  width: 100%;
-  padding: .75em;
+  width: 60%;
+  padding: .25em;
   color: white;
   border-radius: 2px;
-  background-color: #02B3FF;
+  background-color: #0244FF;
   border-top: 1px solid white;
   border-left: 1px solid white;
   border-right: 1px solid #5596B0;
