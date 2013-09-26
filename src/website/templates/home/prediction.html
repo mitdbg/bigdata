@@ -33,21 +33,28 @@
 
   <h2>Timing</h2>
 
-  <p>We will provide an initial training
-  dataset for you to construct models, along with an
-   an initial test dataset and set of N locations, specified
-  by lat, lon center coordinates and time, for you to predict
-  the number of taxi trips initiated within the two hour period following that time within a 250 m radius of the center point.  You can <a
-  href="#submit">submit</a> predictions for this dataset as many times
-  as you wish, and we will provide a leaderboard that updates your
-  score on each submission to track contestant progress against each
-  other.  The initial test dataset is for validation purposes only
-  and has no effect on the final evaluation.</p>
+  <p>We have provided an initial training dataset which includes the
+  actual number of taxi pickups on many different days and times
+  throughout the city.  In addition, we have provided a an initial
+  test set of locations, each specified as a lat, lon center
+  coordinate and a timestamp.  For each of these points, your code
+  needs to predict the number of taxi trips initiated within a 250 m
+  radius of the center point and a two hour period following the
+  timestamp.<p>
 
-  <p>In the last week of the competition, we will release the final test
-  dataset on which contestants will be ultimately compared.  You may
-  submit as many times as you wish but the final scores will be released
-  only at the end of the competition.</p>
+    <p>You can <a href="#submit">submit</a> predictions for
+  this dataset as many times as you wish, and we will provide a
+  leaderboard that updates your score on each submission to track
+  contestant progress against each other.  The initial test dataset is
+  for validation purposes only and has no effect on the final
+  evaluation.</p>
+
+  <p>In the last week of the competition, we will release a final test
+  dataset on which you will be judged.  You may submit as many times
+  as you wish but the final scores will be released only at the end of
+  the competition.  The format of this final data set will be the same
+  as the test data set but will cover a different set of locations and
+  times.</p>
 
 
   <a href="prediction_test1"><div class="buttonHolder"><button class="start-trial">Access Initial Trial Data</button></div></a>
