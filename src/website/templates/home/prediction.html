@@ -25,7 +25,7 @@
   be computed as the root-mean-squared error of your predictions against the 
   ground truth.  That is, given your estimates  <img src="http://latex.codecogs.com/svg.latex?\Hat{p_1}\ldots \Hat{p_n}" border="0"/> for data points
    <img src="http://latex.codecogs.com/svg.latex?p_1\ldots p_n" border="0"/>
-  we will compute:<p><center><img src="http://latex.codecogs.com/svg.latex?\sqrt{\sum_{i\in1\ldots n}{(p_i-\Hat{p_i})^2}}" border="0"/></center></p>
+   we will compute:<p><center><img src="http://latex.codecogs.com/svg.latex?\frac{1}{1+\sqrt{\sum_{i\in1\ldots n}{(p_i-\Hat{p_i})^2}}}" border="0"/></center></p>
 
 
 
@@ -57,9 +57,13 @@
   times.</p>
 
 
-  <a href="prediction_test1"><div class="buttonHolder"><button class="start-trial">Access Initial Trial Data</button></div></a>
+  <a href="prediction_test1"><div class="buttonHolder">
+      <button class="start-trial">Initial Test Dataset</button>
+  </div></a>
 <p>
-<b>Final trial data is not yet available.</b>
+  <div class="buttonHolder">
+    <button class="start-trial disabled">Final Test Dataset (available on XXX)</button>
+  </div>
 
 </div>
 

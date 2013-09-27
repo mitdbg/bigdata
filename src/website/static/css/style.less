@@ -84,7 +84,7 @@ nav {
 .content {
 
   width: 900px;
-  font-size: 15pt;
+  font-size: 12pt;
   line-height: 20pt;
   margin: 0px auto;
   margin-top: 2em;
@@ -92,7 +92,7 @@ nav {
 
 
   h1, h2 {
-    font-size: 23pt;
+    font-size: 16pt;
     font-family: Lato;
     text-align: center;
     display: block;
@@ -100,14 +100,14 @@ nav {
   }
   h2 {
     color: grey;
-    font-size: 17pt;
+    font-size: 14pt;
     font-family: Lato;
     margin-top: 40px;
   }
 
   .heading {
     width: 750px;
-    font-size: 17pt;
+    font-size: 14pt;
     margin: 0px auto;
     text-align: center;
     margin-bottom: 30px;
@@ -124,6 +124,7 @@ nav {
         padding-left: 20px;
       }
     }
+
 
   }
 
@@ -252,6 +253,7 @@ table.dataset {
 }
 
 table.register {
+  width: 100%;
   tbody {
     width: 100%;
 
@@ -260,6 +262,10 @@ table.register {
       text-align: left;
       vertical-align: top;
       padding: 1em;
+
+      a {
+        vertical-align: top;
+      }
 
       input {
         border: 1px solid #eee;
@@ -305,16 +311,27 @@ form {
 
 button, input[type="submit"] {
   font-size: 15pt;
+  font-weight: bold;
   width: 100%;
-  padding: .75em;
+  text-align: center;
+  padding: .25em;
   color: white;
   border-radius: 2px;
-  background-color: #02B3FF;
+  background-color: rgb(2, 144, 255);
   border-top: 1px solid white;
   border-left: 1px solid white;
   border-right: 1px solid #5596B0;
   border-bottom: 1px solid #5596B0;
 }
+
+button.disabled {
+  border: 1px solid grey;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  background: rgb(241, 241, 241);
+  color: rgb(128, 128, 128);
+}
+
 
 .code {
   white-space: pre;
@@ -364,16 +381,16 @@ button, input[type="submit"] {
     width: 750px;
     font-size: 14pt;
 
-    h1, h2 { font-size: 20pt; }
+    h1, h2 { font-size: 15pt; }
 
     .heading {
       width: 500px;
-      font-size: 17pt;
+      font-size: 15pt;
       line-height: 25pt
     }
     .section {
       width: 750px;
-      font-size: 14pt;
+      font-size: 12pt;
     }
   }
 

@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from registration.forms import RegistrationFormTermsOfService
 from registration.backends.default.views import RegistrationView
+from home.forms import *
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -21,7 +22,6 @@ urlpatterns = patterns('',
 
     (r'^accounts/register/$', MyRegistrationView.as_view()),
     (r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^account$', 'home.views.profile', name='profile'),
     url(r'^', include('home.urls')),
 
 

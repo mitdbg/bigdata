@@ -1,6 +1,6 @@
 import os
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.shortcuts import render, render_to_response
 from django.contrib.auth.decorators import login_required
@@ -10,33 +10,18 @@ import misaka as m
 from markdown import Markdown
 from home.models import *
 from home.util import *
+from home.forms import *
 
 
-
-def render_md(request, mdfilepath, context=None):
-  if not context:
-    context = {}
-  content = ""
-  print os.path.abspath(".")
-  with file(mdfilepath, "r") as f:
-    s = f.read()
-    content = m.html(s)
-    #m = Markdown()
-    #content = m.convert(s)
-  context['content'] = content
-  return render(request, "home/md_template.html", context)
 
 def render_page(request, pagename, context=None):
   htmlfilepath = "./templates/home/%s.html" % pagename
-  print htmlfilepath
   if os.path.exists(htmlfilepath):
     return render_to_response(
         'home/%s.html'%pagename, 
         context_instance=RequestContext(request))
 
-  mdfilepath = "./templates/home/%s.md" % pagename
-  print mdfilepath
-  return render_md(request, mdfilepath, context)
+  return error("could not find %s" % pagename)
 
 def index(request):
   return page(request, "index")
@@ -53,50 +38,43 @@ def error(request, title='There was an error', msg=""):
   return render(request, "error.html", context)
 
 
-def info(request):
-  return render_md(request, "./templates/home/info.md")
-
-def prediction(request):
-  return render_md(request, "./templates/home/prediction.md")
-
 def visualization(request):
-  return render_md(request, "./templates/home/visualization.md")
-
-def profile(request):
-  return render(request, "home/user_profile.html", {})
+  visform = VisForm()
+  return render(request, "home/visualization.html",
+      {'visform': visform})
 
 @login_required
-def submit_prediction(request):
-  if request.method == 'POST':
-    user = request.user
-    text = request.POST.get('submission', None)
-    submit_type = request.POST.get('submit_type', 1) # 1 for test
-    prediction = parse(text)
-    score = compute_score(prediction)
+def profile(request):
+  form = SubmitForm()
+  visform = VisForm()
+  return render(request, "home/user_profile.html", {
+    'test1form': form,
+    'visform': visform
+    })
 
-    submission = Submission(
-      user = user,
-      text = text,
-      score = score,
-      submit_type = submit_type
-    )
-    submission.save()
-    return render(request, "home/user_profile.html", {'score': score, 'text': text})
-  return render(request, "home/user_profile.html", {})
+@login_required
+def test1(request):
+  if request.method == 'POST':
+    form = SubmitForm(request.POST)
+
+    if form.is_valid():
+      form.save(request.user)
+
+      return HttpResponseRedirect('/account')
+  else:
+    form = SubmitForm()
+  return render(request, 'home/prediction_test1.html', {'test1form': form})
+
+
 
 @login_required
 def submit_vis(request):
   if request.method == 'POST':
-    user = request.user
-    url = request.POST.get('url', None)
-
-    submission = VisSubmission(
-        user = user,
-        url = url
-    )
-    submission.save()
-
-    return render(request, "home/user_profile.html", {})
-  return render(request, "home/user_profile.html", {})
-
+    form = VisForm(request.POST)
+    if form.is_valid():
+      form.save(request.user)
+      return HttpResponseRedirect('/account#vis')
+  else:
+    form = VisForm()
+  return render(request, 'home/visualization.html', { 'visform': form })
 

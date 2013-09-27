@@ -28,11 +28,14 @@ class Submission(models.Model):
 
   @property
   def score_str(self):
-    return str(self.score)[:5]
+    return str(self.score)[:6]
 
   @property
   def prediction(self):
-    return parse(self.text)
+    try:
+      return parse(self.text)
+    except:
+      return {}
 
 
 
