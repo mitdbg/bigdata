@@ -155,7 +155,8 @@ nav .nav-links li:hover .dropdown-menu {
   text-align: left;
 }
 .content div.sponsors ul.thumbnails {
-  border: 1px solid #5889ac;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eaeaea;
   width: 220px;
 }
 .content div.sponsors ul.thumbnails li {
