@@ -406,7 +406,7 @@ button.disabled {
   position: relative;
   clear: both;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1330px) {
   nav {
     font-size: 12pt;
   }
@@ -466,6 +466,7 @@ button.disabled {
   .content div.section ul.thumbnails,
   .content div.sponsors ul.thumbnails {
     border: none;
+    box-shadow: none;
     clear: both;
     width: 100%;
     margin-left: auto;
@@ -475,13 +476,13 @@ button.disabled {
   .content div.section ul.thumbnails li,
   .content div.sponsors ul.thumbnails li {
     float: left;
-    margin: 0px;
+    margin: 5px;
   }
   .infobox {
     width: 700px;
   }
 }
-@media (max-width: 1300px) {
+@media (max-width: 1000px) {
   nav {
     font-size: 12pt;
   }
