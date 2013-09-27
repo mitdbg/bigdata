@@ -25,8 +25,17 @@ ul {
 li {
   margin-bottom: 0.8em;
 }
-nav {
+.container {
+  width: 950px;
+  height: auto;
   overflow: hidden;
+  margin: 0px auto;
+}
+.nav-container {
+  width: 1100px;
+}
+nav {
+  overflow: visible;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -36,6 +45,9 @@ nav {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   background: white;
   font-size: 13pt;
+}
+nav .container {
+  overflow: visible;
 }
 nav .logo {
   float: left;
@@ -52,25 +64,33 @@ nav .nav-links li {
 }
 nav .nav-links li a {
   color: #1d75b9;
-  padding: 25px 25px;
+  padding: 15px 25px 15px 25px;
 }
 nav .nav-links li a:visited {
   color: #7fadf1;
+}
+nav .nav-links li a:hover {
+  background: #f1f1f1;
+  color: #1d75b9;
+}
+nav .nav-links li .dropdown-menu {
+  margin-top: 0px;
+  border-top: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+nav .nav-links li .dropdown-menu a:hover {
+  background: none;
+}
+nav .nav-links li:hover .dropdown-menu {
+  display: block;
 }
 .main {
   margin: 0px;
   padding: 0px;
   padding-top: 50px;
   z-index: 500;
-}
-.container {
-  width: 950px;
-  height: auto;
-  overflow: hidden;
-  margin: 0px auto;
-}
-.nav-container {
-  width: 1100px;
 }
 .content {
   width: 900px;

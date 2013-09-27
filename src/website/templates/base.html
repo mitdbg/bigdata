@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+	  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 
 	  <title>MIT Big Data Challenge</title>
-		<script src="/static/js/jquery.js"></script>
-		<script src="/static/js/bootstrap.min.js"></script>
 	</head>
 
 <body>
 <nav>
   <div class="container nav-container">
     <div class="logo"><a href="/">MIT Big Data Challenge</a></div>
-    <ul class="nav-links">
-      <li><a href="/prediction">Prediction</a></li>
+
+    <ul class="nav nav-links" role="navigation">
+			<li class="dropdown">
+				<a href="/prediction" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown" data-target="/prediction">Prediction <b class="caret"></b></a>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="/prediction_test1">Submit Initial Test</a></li>
+				</ul>
+			</li>
+      <li>
+
       <li><a href="/visualization">Visualization</a></li>
       <li><a href="/datasets">Datasets</a></li>
       <li><a href="/rules">Rules</a></li>
@@ -36,6 +43,7 @@
   </div>
 
   <div class="content">
+
     {% block content %}{% endblock %}
     <div class="section"><div class="footer">
       <a href="http://bigdata.csail.mit.edu/">BigData@CSAIL</a>

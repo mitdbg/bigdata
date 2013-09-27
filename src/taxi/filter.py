@@ -3,7 +3,10 @@ from sympy.geometry import *
 from sympy.core.numbers import Rational
 from sqlalchemy import *
 import matplotlib.pyplot as plt
+from collections import *
 import random
+import math
+import numpy as np
 import time
 import csv
 import sys
@@ -70,7 +73,60 @@ with file('../interestlocations/interestpoints.csv') as f:
   rows = [row for row in r]
   latlons = [(float(row[-2]), float(row[-1])) for row in rows]
 
-import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=(140, 40))
+
+db = create_engine('postgresql://localhost:5432/bigdata')
+q = "select distinct date_trunc('hour', pickup_time) as hour from pickups_lean where pickup_time > '2012-06-01' order by hour "
+hours = filter(bool, [r[0] for r in db.execute(q)])
+blocksize = int(math.floor(len(hours) / 20))
+ticks = [hours[blocksize * i] for i in xrange(20)]
+
+
+
+latlons = latlons[:10]
+for i, latlon in enumerate(latlons):
+  subplot = fig.add_subplot(len(latlons), 1, i)
+  q = "select count(*) as count, date_trunc('hour', pickup_time) as hour from pickups_lean where ((pickup_lat - %f)^2 + (pickup_long - %f)^2)^0.5 < %f group by hour order by hour asc" % (latlon[0], latlon[1], 250/111137.60749963613)
+  res = db.execute(q)
+  avgcounts = defaultdict(list)
+  rows = {}
+  for r in res:
+    avgcounts[r[1].hour].append(r[0])
+    rows[r[1]] = r[0]
+
+  for k in avgcounts.keys():
+    if avgcounts[k]:
+      avgcounts[k] = np.mean(avgcounts[k])
+    else:
+      avgcounts[k] = 0
+
+  ys = [rows.get(h,0) for h in hours]
+
+  xs = hours
+  subplot.set_xticks(ticks)
+
+  subplot.plot(xs, ys, alpha=0.2, c="grey")
+
+
+  ys = [y - avgcounts.get(h.hour, 0) for y in ys]
+  smoothavg = [avgcounts.get(h.hour, 0) for h in hours]
+  smoothed2 = []
+  smoothed4 = []
+  for i in xrange(len(ys)):
+    smoothed2.append(np.mean(ys[i:i+2]))
+    smoothed4.append(np.mean(ys[i:i+4]))
+  subplot.plot(xs, ys, alpha=0.2, c="grey")
+  subplot.plot(xs, smoothavg, alpha=0.2, c="blue")
+  subplot.plot(xs, smoothed2, alpha=0.2, c="black")
+  subplot.plot(xs, [1]*len(xs), alpha=0.1)
+plt.savefig('foo.png', format='png')
+exit()
+
+
+   
+
+
 fig = plt.figure(figsize=(50, 30))
 lats, lons = zip(*latlons)
 r = 250/111137.60749963613

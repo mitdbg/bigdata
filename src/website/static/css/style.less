@@ -29,8 +29,21 @@ li {
   margin-bottom: 0.8em;
 }
 
-nav {
+.container {
+  width: 950px;
+  height: auto;
   overflow: hidden;
+  margin: 0px auto;
+}
+
+.nav-container {
+  width: 1100px;
+}
+
+
+
+nav {
+  overflow: visible;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -40,6 +53,10 @@ nav {
   box-shadow: 0 3px 3px rgba(0,0,0,.1);
   background: white;
   font-size: 13pt;
+
+  .container {
+    overflow: visible;
+  }
 
   .logo {
     float: left;
@@ -57,11 +74,33 @@ nav {
 
       a {
         color: rgb(29, 117, 185);
-        padding: 25px 25px;
+        padding: 15px 25px 15px 25px;
       }
       a:visited {
         color: rgb(127, 173, 241);
       }
+      a:hover {
+        background: rgb(241, 241, 241);
+        color: #1d75b9;
+      }
+      .dropdown-menu {
+        margin-top: 0px;
+        border-top: none;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        a:hover { 
+          background: none;
+        }
+      }
+
+
+    }
+    li:hover {
+        .dropdown-menu {
+          display: block;    
+        }
+
     }
   }
 }
@@ -73,17 +112,6 @@ nav {
   z-index: 500;
 }
 
-
-.container {
-  width: 950px;
-  height: auto;
-  overflow: hidden;
-  margin: 0px auto;
-}
-
-.nav-container {
-  width: 1100px;
-}
 
 .content {
 
