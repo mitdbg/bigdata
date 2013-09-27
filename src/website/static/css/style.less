@@ -61,7 +61,7 @@ nav {
   .logo {
     float: left;
     font-size: 15pt;
-    padding: 12px 0px 12px 0px;
+    padding: 15px 0px 12px 0px;
   }
 
   .nav-links {
@@ -85,10 +85,14 @@ nav {
       }
       .dropdown-menu {
         margin-top: 0px;
+        padding: 1em;
         border-top: none;
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
         border-radius: 0px;
+        a {
+          padding: 5px;
+          }
         a:hover { 
           background: none;
         }
@@ -399,11 +403,11 @@ button.disabled {
 
     .logo {
       font-size: 15pt;
-      padding: 12px 0px;
+      padding: 15px 0px;
     }
 
     .nav-links li a {
-      padding: 25px 10px;
+      padding: 15px 10px 15px 10px;
     }
   }
 
@@ -444,7 +448,6 @@ button.disabled {
       float: none;
       text-align: center;
       li a {
-        padding: 25px 10px;
       }
     }
   }
@@ -473,6 +476,21 @@ button.disabled {
   .infobox { width: 85%; }
 }
 
+@media (max-width: 700px) {
+  nav {
+    height: 100px;
+    .logo { display: none; }
+    .nav-links {
+      li a {
+        width: 100px;
+        font-size: 15px;
+        padding: 15px 10px 0px 10px;
+        margin: 0px;
+
+      }
+    }
+  }
+}
 
 
 
