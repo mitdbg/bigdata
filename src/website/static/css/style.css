@@ -259,7 +259,7 @@ table.register tbody .errorlist li {
   border: none;
 }
 form {
-  background:  #f2f2ea;
+  background: #fff7e8;
   width: 100%;
   padding: 2em;
   text-align: center;
@@ -282,8 +282,8 @@ input[type="submit"] {
   background-color: #0290ff;
   border-top: 1px solid white;
   border-left: 1px solid white;
-  border-right: 1px solid #0044FF;
-  border-bottom: 1px solid #0044FF;
+  border-right: 1px solid #5596B0;
+  border-bottom: 1px solid #5596B0;
 }
 button.disabled {
   border: 1px solid grey;
@@ -313,7 +313,7 @@ button.disabled {
 }
 @media (max-width: 1200px) {
   nav {
-    font-size: 10pt;
+    font-size: 12pt;
   }
   nav .logo {
     font-size: 15pt;
@@ -348,7 +348,7 @@ button.disabled {
 }
 @media (max-width: 800px) {
   nav {
-    font-size: 14pt;
+    font-size: 12pt;
   }
   nav .logo {
     display: none;
