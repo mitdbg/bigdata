@@ -259,7 +259,7 @@ table.register tbody .errorlist li {
   border: none;
 }
 form {
-  background: #fff7e8;
+  background:  #f2f2ea;
   width: 100%;
   padding: 2em;
   text-align: center;
@@ -282,8 +282,8 @@ input[type="submit"] {
   background-color: #0290ff;
   border-top: 1px solid white;
   border-left: 1px solid white;
-  border-right: 1px solid #5596B0;
-  border-bottom: 1px solid #5596B0;
+  border-right: 1px solid #0044FF;
+  border-bottom: 1px solid #0044FF;
 }
 button.disabled {
   border: 1px solid grey;
