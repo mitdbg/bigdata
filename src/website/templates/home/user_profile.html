@@ -8,25 +8,27 @@
 <p>
 Hi {{user.username}}, this is your profile page.
 </p>
+
+
+<a href="">Submit a new prediction</a>
+<a href="">Submit a new visualization</a>
 </div>
 
 <div class="section">
   <a name="predict"></a>
-<div class="textseparator"><h1>Prediction Challenge</h1></div>
+<div class="textseparator"><h1>Your prediction submissions</h1></div>
 
   {% include "home/past_submissions.html" %}
 
-  {% include "home/prediction_test_form.html" %}
 
 </div>
 
 <div class="section">
   <a name="vis"></a>
-<div class="textseparator"><h1>Visualization Challenge</h1></div>
+<div class="textseparator"><h1>Your visualization submissions</h1></div>
 
   {% include "home/past_vis_submissions.html" %}
 
-  {% include "home/vis_test_form.html" %}
 
 </div>
 

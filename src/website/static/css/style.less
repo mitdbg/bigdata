@@ -75,10 +75,14 @@ nav {
 
 
 .container {
-  width: 940px;
+  width: 950px;
   height: auto;
   overflow: hidden;
   margin: 0px auto;
+}
+
+.nav-container {
+  width: 1100px;
 }
 
 .content {
@@ -376,6 +380,10 @@ button.disabled {
   }
 
   .container { width: 750px; }
+  .nav-container {
+    width: 900px;
+  }
+
  
   .content {
     width: 750px;
@@ -398,7 +406,7 @@ button.disabled {
   .infobox { width: 700px; }
 
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   nav {
     font-size: 12pt;
 
@@ -408,13 +416,14 @@ button.disabled {
       float: none;
       text-align: center;
       li a {
-        padding: 25px 4px;
+        padding: 25px 10px;
       }
     }
   }
   
 
   .container { width: 85%; }
+  .nav-container { width: 90%; }
  
   .content {
     width: 85%;

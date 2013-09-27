@@ -64,10 +64,13 @@ nav .nav-links li a:visited {
   z-index: 500;
 }
 .container {
-  width: 940px;
+  width: 950px;
   height: auto;
   overflow: hidden;
   margin: 0px auto;
+}
+.nav-container {
+  width: 1100px;
 }
 .content {
   width: 900px;
@@ -325,6 +328,9 @@ button.disabled {
   .container {
     width: 750px;
   }
+  .nav-container {
+    width: 900px;
+  }
   .content {
     width: 750px;
     font-size: 14pt;
@@ -346,7 +352,7 @@ button.disabled {
     width: 700px;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   nav {
     font-size: 12pt;
   }
@@ -358,10 +364,13 @@ button.disabled {
     text-align: center;
   }
   nav .nav-links li a {
-    padding: 25px 4px;
+    padding: 25px 10px;
   }
   .container {
     width: 85%;
+  }
+  .nav-container {
+    width: 90%;
   }
   .content {
     width: 85%;
