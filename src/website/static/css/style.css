@@ -136,6 +136,49 @@ nav .nav-links li:hover .dropdown-menu {
   border-left: 6px solid #eee;
   padding-left: 20px;
 }
+.content div.sponsors {
+  position: absolute;
+  top: 200px;
+  left: 0px;
+  width: 300px;
+  padding-left: 1em;
+}
+.content div.sponsors .textseparator {
+  background: none;
+}
+.content div.sponsors h1,
+.content div.sponsors h2 {
+  width: 220px;
+  padding: 0px;
+  display: block;
+  background: #f9f9f6;
+  text-align: left;
+}
+.content div.sponsors ul.thumbnails {
+  border: 1px solid #5889ac;
+  width: 220px;
+}
+.content div.sponsors ul.thumbnails li {
+  border: none;
+  margin: 0px;
+  margin-bottom: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+}
+.content div.sponsors ul.thumbnails li a {
+  height: 3.5em;
+  margin: 0px;
+  padding: 1em;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  background: white;
+  border: none;
+}
+.content div.sponsors ul.thumbnails li a:hover {
+  background: #efefef;
+}
 .content ul.submission-list {
   background: white;
   padding: 20px;
@@ -170,6 +213,21 @@ nav .nav-links li:hover .dropdown-menu {
 }
 .content ul.submission-list .text {
   font-size: 12pt;
+}
+.content ul.submit-buttons li {
+  float: left;
+  width: 40%;
+  border-left: none;
+}
+.content ul.submit-buttons li:first {
+  margin-left: 5%;
+}
+.content ul.submit-buttons:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
 .infobox {
   width: 800px;
@@ -304,13 +362,22 @@ input[type="submit"] {
   width: 100%;
   text-align: center;
   padding: .25em;
+  padding-bottom: .3em;
   color: white;
   border-radius: 2px;
   background-color: #0290ff;
-  border-top: 1px solid white;
-  border-left: 1px solid white;
+  border-top: 1px solid #efefef;
+  border-left: 1px solid #efefef;
   border-right: 1px solid #5596B0;
   border-bottom: 1px solid #5596B0;
+}
+button:hover,
+input[type="submit"]:hover {
+  background-color: #3991d6;
+  border-top: 1px solid #2e7692;
+  border-left: 1px solid #2e7692;
+  border-right: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
 }
 button.disabled {
   border: 1px solid grey;
@@ -372,11 +439,48 @@ button.disabled {
     width: 750px;
     font-size: 12pt;
   }
+  .content div.section,
+  .content div.sponsors {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 12pt;
+  }
+  .content div.section .textseparator,
+  .content div.sponsors .textseparator {
+    background: url(/static/img/pixel.png) repeat-x left center;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+  .content div.section .textseparator h1,
+  .content div.sponsors .textseparator h1,
+  .content div.section .textseparator h2,
+  .content div.sponsors .textseparator h2 {
+    padding: 0 .25em;
+    display: inline;
+    background: #f9f9f6;
+  }
+  .content div.section ul.thumbnails,
+  .content div.sponsors ul.thumbnails {
+    border: none;
+    clear: both;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+  }
+  .content div.section ul.thumbnails li,
+  .content div.sponsors ul.thumbnails li {
+    float: left;
+    margin: 0px;
+  }
   .infobox {
     width: 700px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   nav {
     font-size: 12pt;
   }

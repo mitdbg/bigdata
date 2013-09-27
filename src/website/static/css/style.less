@@ -164,6 +164,51 @@ nav {
 
   }
 
+div.sponsors {
+  position: absolute;
+  top: 200px;
+  left: 0px;
+  width: 300px;
+  padding-left: 1em;
+
+  .textseparator {
+    background: none;
+  }
+  h1, h2 {
+    width: 220px;
+    padding: 0px;
+    display: block;
+    background: @bgcolor;
+    text-align: left;
+  }  
+
+  ul.thumbnails {
+    border: 1px solid rgb(88, 137, 172);  
+    width: 220px;
+    li {
+      border: none;
+      margin: 0px;
+      margin-bottom: 1px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0px;
+      a {
+        height: 3.5em;
+        margin: 0px;
+        padding: 1em;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;        
+        background: white;
+        border: none;
+      }
+      a:hover {
+        background: #efefef;
+      }
+    }
+  }
+}
+
   ul.submission-list {
     background: white;
     padding: 20px;
@@ -190,6 +235,28 @@ nav {
     .text {
       font-size: 12pt; 
     }
+  }
+
+  ul.submit-buttons {
+    li {
+      float: left;
+      width: 40%;
+      border-left: none;
+
+    }
+    li:first {
+      margin-left: 5%;
+    }
+  }
+
+
+
+  ul.submit-buttons:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;  
   }
 
 
@@ -351,13 +418,23 @@ button, input[type="submit"] {
   width: 100%;
   text-align: center;
   padding: .25em;
+  padding-bottom: .3em;
   color: white;
   border-radius: 2px;
   background-color: rgb(2, 144, 255);
-  border-top: 1px solid white;
-  border-left: 1px solid white;
+  border-top: 1px solid #efefef;
+  border-left: 1px solid #efefef;
   border-right: 1px solid #5596B0;
   border-bottom: 1px solid #5596B0;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: rgb(57, 145, 214);
+  border-top: 1px solid rgb(46, 118, 146);
+  border-left: 1px solid rgb(46, 118, 146);
+  border-right: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  
 }
 
 button.disabled {
@@ -432,13 +509,51 @@ button.disabled {
       width: 750px;
       font-size: 12pt;
     }
-  }
 
+    div.section, div.sponsors {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      font-size: 12pt;
+
+
+      .textseparator {
+        background: url(/static/img/pixel.png) repeat-x left center;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+
+        h1, h2 {
+          padding: 0 .25em;
+          display: inline;
+          background: @bgcolor;
+        }
+      }
+      ul.thumbnails {
+        border: none;
+        clear: both;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        li { 
+          float: left; 
+          margin:0px;
+        }
+      }
+
+    }      
+  
+
+
+  }
 
   .infobox { width: 700px; }
 
+
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   nav {
     font-size: 12pt;
 
@@ -471,6 +586,7 @@ button.disabled {
       width: 100%; 
       font-size: 13pt;
     }
+
   }
 
   .infobox { width: 85%; }
