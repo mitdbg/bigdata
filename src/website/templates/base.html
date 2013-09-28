@@ -8,14 +8,11 @@
 	</head>
 
 <body>
-    <div class="brand" style="float: left; width: 100px;"><img src="http://bigdata.csail.mit.edu/sites/bigdata/files/bigdata_logo.png" width="80px"></div>
-
 <nav>
   <div class="container nav-container">
     <div class="logo"><a href="/">MIT Big Data Challenge</a></div>
 
     <ul class="nav nav-links" role="navigation">
-     {% if user.is_authenticated %}
 			<li class="dropdown">
 				<a href="/prediction" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown" data-target="/prediction">Prediction <b class="caret"></b></a>
 				<ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
@@ -23,10 +20,6 @@
 				</ul>
 			</li>
       <li>
-    {% else %}
-      <li><a href="/prediction">Prediction</a></li>
-    {% endif %}
-
 
       <li><a href="/visualization">Visualization</a></li>
       <li><a href="/datasets">Datasets</a></li>
@@ -53,9 +46,7 @@
 
     {% block content %}{% endblock %}
     <div class="section"><div class="footer">
-      <h3>
       <a href="http://bigdata.csail.mit.edu/">BigData@CSAIL</a>
-      </h3>
     </div></div>
   </div>
 
