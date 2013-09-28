@@ -10,7 +10,8 @@
 <body>
 <nav>
   <div class="container nav-container">
-    <div class="logo"><a href="/"><img src="http://bigdata.csail.mit.edu/sites/bigdata/files/bigdata_logo.png" width="80px">MIT Big Data Challenge</a></div>
+    <div class="brand"><img src="http://bigdata.csail.mit.edu/sites/bigdata/files/bigdata_logo.png" width="80px"></div>
+    <div class="logo"><a href="/">MIT Big Data Challenge</a></div>
 
     <ul class="nav nav-links" role="navigation">
      {% if user.is_authenticated %}
@@ -51,7 +52,9 @@
 
     {% block content %}{% endblock %}
     <div class="section"><div class="footer">
+      <h3>
       <a href="http://bigdata.csail.mit.edu/">BigData@CSAIL</a>
+      </h3>
     </div></div>
   </div>
 
