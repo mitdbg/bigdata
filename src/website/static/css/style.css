@@ -409,7 +409,7 @@ button.disabled {
 .company-logo {
   display: block;
   margin: auto;
-  vertical-align: text-center;
+  vertical-align: middle;
 }
 @media (max-width: 1330px) {
   nav {
