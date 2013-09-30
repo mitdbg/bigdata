@@ -48,20 +48,22 @@
     <div class="image"></div>
   </div>
 <div class ="row">
-  <div class="content span3">
+    <div class="content span3">
     blah blah blah
+    </div> 
+    <div class="content span9 offset3">
+
+      {% block content %}{% endblock %}
     </div>
-  <div class="content span9 offset3">
-
-    {% block content %}{% endblock %}
-    <div class="section"><div class="footer">
+</div>
+    
+<div class="section">
+    <div class="footer">
       <a href="http://bigdata.csail.mit.edu/">BigData@CSAIL</a>
-    </div></div>
-  </div>
-  </div>
-
+    </div>
 </div>
 
+</div>
 
 
 
