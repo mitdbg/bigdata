@@ -169,11 +169,7 @@ nav .nav-links li:hover .dropdown-menu {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
-  background: white;
   border: none;
-}
-.content div.sponsors ul.thumbnails li a:hover {
-  background: #efefef;
 }
 .content ul.submission-list {
   background: white;
