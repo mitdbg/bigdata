@@ -154,6 +154,11 @@ nav .nav-links li:hover .dropdown-menu {
   background: #f9f9f6;
   text-align: left;
 }
+.content div.sponsors ul.thumbnails {
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  border: 0px
+    width: 120px;
+}
 .content div.sponsors ul.thumbnails li {
   border: none;
   margin: 0px;
@@ -169,7 +174,11 @@ nav .nav-links li:hover .dropdown-menu {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
+  background: white;
   border: none;
+}
+.content div.sponsors ul.thumbnails li a:hover {
+  background: #efefef;
 }
 .content ul.submission-list {
   background: white;
