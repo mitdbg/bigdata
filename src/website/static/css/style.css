@@ -406,7 +406,7 @@ button.disabled {
   position: relative;
   clear: both;
 }
-img .company-logo {
+.company-logo {
   display: block;
   margin: auto;
   vertical-align: text-top;
