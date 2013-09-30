@@ -155,9 +155,9 @@ nav .nav-links li:hover .dropdown-menu {
   text-align: left;
 }
 .content div.sponsors ul.thumbnails {
-  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
-  border: 0px
-    width: 120px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eaeaea;
+  width: 120px;
 }
 .content div.sponsors ul.thumbnails li {
   border: none;
