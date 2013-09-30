@@ -1,17 +1,7 @@
 {% extends "base.html" %}
 {% load home_extras %}
 
-{% block content %}
-
-{% if user.is_authenticated %}
-  {% infobox user %}
-{% endif %}
-
-{% leaderboard %}
-
-
-<div class="section">
-        <div class="nav nav-stacked span3">
+      <div class="nav nav-stacked span3">
     The MIT Data Challenge was brought to you by:<p>
 <img src="http://bigdata.csail.mit.edu/sites/bigdata/files/bigdata_logo.png" alt="bigdata@CSAIL" title="bigdata@CSAIL" id="sitelogo" width="100px">
       <p>and<p>
@@ -32,6 +22,17 @@
 
     </div> 
 
+{% block content %}
+
+{% if user.is_authenticated %}
+  {% infobox user %}
+{% endif %}
+
+{% leaderboard %}
+
+
+<div class="section">
+  
   <div class="heading">
   <div class="textseparator"><h1>Introduction</h1></div>
     <p>What can we learn from 2.3 Million Taxi Rides?
