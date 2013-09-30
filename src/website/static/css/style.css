@@ -126,10 +126,19 @@ nav .nav-links li:hover .dropdown-menu {
   margin-bottom: 30px;
 }
 .content .thanks p {
+  margin-top: 2em;
   margin-bottom: 10px;
+  font-size: 13pt;
 }
 .content .thanks table td {
   border: none;
+}
+.content .thanks table td img {
+  height: 50px;
+}
+.content .thanks table td div {
+  padding-top: .5em;
+  font-family: garamond;
 }
 .content .section {
   width: 800px;
@@ -411,6 +420,11 @@ button.disabled {
   text-align: center;
   position: relative;
   clear: both;
+}
+.company-logo {
+  display: block;
+  margin: auto;
+  vertical-align: middle;
 }
 @media (max-width: 1330px) {
   nav {
