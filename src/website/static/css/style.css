@@ -406,6 +406,11 @@ button.disabled {
   position: relative;
   clear: both;
 }
+company-logo {
+  display: block;
+  margin: auto;
+  vertical-align: text-top;
+}
 @media (max-width: 1330px) {
   nav {
     font-size: 12pt;
