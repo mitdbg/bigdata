@@ -54,49 +54,53 @@ Each line consists of
 	[location id],[date],[start hour],[end hour],[latitude],[longitude]
 </div>
 </p>
-
-<div class="textseparator"><h1>Submit</h1></div>
-<a name="submit"></a>
-<h2>Submission Format</h2>
-
-<p>Each line contains the following information</p>
-
-
-<div class="code">    
-    [location id]<space>[number]
 </div>
 
-<p>The following example specifies that location 1 has demand 99, 2 has demand 105, and 3 has demand 209.</p>
+<div class="section">
+  <div class="textseparator"><h1>Submission Format</h1></div>
 
-<div class="code">    
-    1 99
-    2 105
-    3 209
+  <p>Each line contains the following information</p>
+
+
+  <div class="code">    
+      [location id]<space>[number]
+  </div>
+
+  <p>The following example specifies that location 1 has demand 99, 2 has demand 105, and 3 has demand 209.</p>
+
+  <div class="code">    
+      1 99
+      2 105
+      3 209
+  </div>
+
+  <p>To clarify, we will use the following python program to parse your submission</p>
+
+  <div class="code">    
+      def parse(submission):
+        """
+        ARGS:
+          submission is as string
+
+        RETURN:
+          dictionary of location -&gt; demand number 
+        """
+        demands = {}
+        try:
+          lines = submission.split("\n")
+          for line in lines:
+            tokens = line.split(" ")
+            locid = int(tokens[0])
+            demand = int(tokens[1])
+            demands[locid] = demand
+        except:
+          return {}
+  </div>
 </div>
 
-<p>To clarify, we will use the following python program to parse your submission</p>
-
-<div class="code">    
-    def parse(submission):
-      """
-      ARGS:
-        submission is as string
-
-      RETURN:
-        dictionary of location -&gt; demand number 
-      """
-      demands = {}
-      try:
-        lines = submission.split("\n")
-        for line in lines:
-          tokens = line.split(" ")
-          locid = int(tokens[0])
-          demand = int(tokens[1])
-          demands[locid] = demand
-      except:
-        return {}
+<div class="section">
+  <a name="submit"></a>
+  <div class="textseparator"><h1>Submit</h1></div>
+  {% include "home/prediction_test_form.html" %}
 </div>
-
-<a name="form"/>
-{% include "home/prediction_test_form.html" %}
 {% endblock %}
