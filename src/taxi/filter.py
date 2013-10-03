@@ -3,6 +3,7 @@ from sympy.geometry import *
 from sympy.core.numbers import Rational
 from sqlalchemy import *
 import matplotlib.pyplot as plt
+from datetime import *
 from collections import *
 import random
 import math
@@ -13,7 +14,18 @@ import sys
 import json
 import pdb
 
-
+def block_iter(l, nblocks=2):
+    """
+    partitions l into nblocks blocks and returns generator over each block
+    @param l list
+    @param nblocks number of blocks to partition l into
+    """
+    blocksize = int(math.ceil(len(l) / float(nblocks)))
+    i = 0
+    while i < len(l):
+        yield l[i:i+blocksize]
+        i += blocksize      
+ 
 
 class Filterer(object):
   def __init__(self, radius=None, table='pickups', lat='lat', lon='lon', time='time'):
@@ -75,16 +87,119 @@ with file('../interestlocations/interestpoints.csv') as f:
   locnames = [row[0] for row in rows]
 
 
-fig = plt.figure(figsize=(50, 30))
-lats, lons = zip(*latlons)
-r = 250/111137.60749963613
-plt.bar(lats, [r]*len(lats), width=r, bottom=lons, alpha=0.1)
+#fig = plt.figure(figsize=(50, 30))
+#lats, lons = zip(*latlons)
+#r = 250/111137.60749963613
+#plt.bar(lats, [r]*len(lats), width=r, bottom=lons, alpha=0.1)
+#
+#plt.savefig('foo.png', format='png')
 
-plt.savefig('foo.png', format='png')
 
+def row2clause(row):
+  latlon, name, stime, etime = tuple(row)
+  lat, lon = tuple(latlon)
+  q = " (((pickup_lat - %f)^2 + (pickup_long - %f)^2)^0.5 <= %f and (pickup_time >= '%s'::timestamp) and (pickup_time <= '%s'::timestamp))"
+  print stime, etime, name
+  return q % (lat, lon, 250./111137.60749963613, stime, etime)
+
+def rows2clause(dt, rows):
+  stime, etime = dt
+
+  loc2clause = lambda row: "(((pickup_lat - %f)^2 + (pickup_long - %f)^2)^0.5 <= %f)"  % (row[0][0], row[0][1], 250./111137.60749963613)
+  clause = " or ".join(map(loc2clause, rows))
+  tclause = "('%s' <= pickup_time and pickup_time <= '%s')" % (stime, etime)
+  where = "(%s and (%s))" % (tclause, clause) 
+  return where
+
+
+def partition(items, keyf, value=lambda d:d):
+  ret = defaultdict(list)
+  for item in items:
+    ret[keyf(item)].append(value(item))
+  return ret
+
+def rowsnotzero((dt, rows)):
+  where = rows2clause(dt, rows)
+  q = "select count(*) from pickups_train where %s" % where
+  return db.execute(q).fetchone()[0] > 0
+
+db = create_engine("postgresql://localhost:5432/bigdata")
+rows = json.load(file('./timeslots'))
+partitions = partition(rows, lambda r: (r[2], r[3])).items()
+random.shuffle(partitions)
+test1rows = partitions[:len(partitions)/2]
+test2rows = partitions[len(partitions)/2:]
+
+test1rows.sort(key=lambda r: r[0])
+test1rows = filter(rowsnotzero, test1rows)
+test2rows.sort(key=lambda r: r[0])
+test2rows = filter(rowsnotzero, test2rows)
+for dt, rows in test1rows:
+  where = rows2clause(dt, rows)
+  q = "select count(*) from pickups_train where %s" % where
+  print dt, len(rows), db.execute(q).fetchone()
+  q = "insert into pickups_test1 select * from pickups_train where %s" % where
+  db.execute(q)
+  q = "delete from pickups_train where %s" % where
+  db.execute(q)
+
+print 
+
+for dt, rows in test2rows:
+  where = rows2clause(dt, rows)
+  q = "select count(*) from pickups_train where %s" % where
+  print dt, len(rows), db.execute(q).fetchone()
+  q = "insert into pickups_test2 select * from pickups_train where %s" % where
+  db.execute(q)
+  q = "delete from pickups_train where %s" % where
+  db.execute(q)
+
+# turn them into 
+def write_test_csv(testrows, fname):
+  output = []
+  i = 0
+  for dt, rows in testrows:
+    for row in rows:
+      output.append((i, dt[0], dt[1], row[0][0], row[0][1]))
+      i += 1
+
+  with open(fname, 'wb') as csvfile:
+    w = csv.writer(csvfile, delimiter=',')
+    map(w.writerow, output)
+
+write_test_csv(test1rows, 'test1.txt')
+write_test_csv(test2rows, 'test2.txt')
+
+
+
+
+exit()
+
+# setup delete
+
+for i, block in enumerate(block_iter(rows[:len(rows)/2], 50)):
+  where = ' or '.join(map(row2clause, rows))
+  q = "insert into pickups_test1 select * from pickups where %s" % where
+  print i, len(block)
+  exit()
+  db.execute(q)
+
+for i, block in enumerate(block_iter(rows[len(rows)/2:], 50)):
+  where = ' or '.join(map(row2clause, rows))
+  q = "insert into pickups_test2 select * from pickups where %s" % where
+  print i, len(block)
+  db.execute(q)
+
+for i, block in enumerate(block_iter(rows, 100)):
+  where = ' or '.join(map(row2clause, rows))
+  q = "delete from pickups_train where %s" % where
+  print i, len(block)
+  db.execute(q)
+
+exit()
        
 if __name__ == '__main__':
-  f = Filterer(table='pickups_6_test', lat='pickup_lat', lon='pickup_long', time='pickup_time')
+  f = Filterer(table='pickups', lat='pickup_lat', lon='pickup_long', time='pickup_time')
 
   # pick random data
   random.seed(0)
