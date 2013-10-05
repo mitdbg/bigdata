@@ -133,9 +133,6 @@ nav .nav-links li:hover .dropdown-menu {
 .content .thanks table td {
   border: none;
 }
-.content .thanks table td img {
-  height: 50px;
-}
 .content .thanks table td div {
   padding-top: .5em;
   font-family: garamond;

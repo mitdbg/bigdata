@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<div class="section">
 <h1>Registration</h1>
+<div class="section">
 
 <form method="post" action="/accounts/register/">
   {% csrf_token %}
@@ -15,43 +15,33 @@
       <tr class="required">
         <th style="vertical-align: top"><label for="id_tos">Terms and Conditions:</label></th>
         <td>
-          <input id="id_tos" name="tos" type="checkbox" style="width: 20px; height: 20px">
-          I have read and agree to the <a href="static/rules.pdf">Terms and Conditions</a>
-          
-          <p>{{ form.tos.errors }}
+         
+          <p>In order to enter the MIT BigData Challenge (the “Contest”), you must agree to the 
+          <a href="/static/rules.pdf">Official Rules (“Rules”)</a>. You agree that submission of an entry (“Entry”) to either the Prediction or Visualization Challenge constitutes your full and unconditional agreement to the Rules, and you represent and warrant that you have read, understood, and agree to be bound by the Rules.</p>
 
           <p>
+          <a href="/static/rules.pdf"><button>Download a complete copy of the Rules (PDF)</button></a>
+          </p>
 
-            In order to enter the MIT BigData Challenge (the “Contest”),
-            you must agree to the Official Rules (“Rules”).   You
-            agree that submission of an entry (“Entry”) to either the
-            Prediction or Viz Challenge constitutes your full and
-            unconditional agreement to the Rules, and you represent
-            and warrant that you have read, understood, and agree to
-            be bound by the Rules.  <p> <a href="static/rules.pdf">Click
-            here</a> to download a complete copy of the Rules in PDF
-            format.  <p> A short summary of a few of the rules is
-            provided for your convenience below.  However, you must
-            agree to the <a href="static/rules.pdf">complete rules</a>
-            to participate!
+          <p>A short summary of a few of the rules is provided below. However, you must agree to the complete rules to participate!</p>
 
-          <ul>
-          <li>One account per participant, one participant must have an MIT certificate, and there is no limit to your team size.</li>
+          <ul style="margin-left: 0px">
+              <li>One account per participant, one participant must have an MIT certificate</li>
+              <li>There is no limit to your team size.</li>
+              <li>Data is provided for use in the contest only. You may not post or redistribute it, or use it for purposes other than the contest.</li>
+              <li>You will not attempt to use the data to extract personal information about any individual.</li>
+              <li>You will provide us with your source code (if relevant)</li>
+              <li>You will allow MIT and the City of Boston to copy, distribute, display, and make derivatives of your work without any compensation to you.</li>
+              <li>You are the owner of your submission.</li>
+              <li>We reserve the right to disqualify any entry, and you agree not to hold us liable for anything in connection with the contest.</li>
+              <li>We will provide the prize to the registered account holder; teams are responsible for divvying up money amongst themselves.</li>
+          </ul>    
 
-          <li>Data is provided for use in the contest only.  You may not post or redistribute it, or use it for purposes other than the contest.</li>
-
-          <li>You will not attempt to use the data to extract personal information about any individual.</li>
-
-          <li>You will provide us with your source code (if relevant), and you will allow MIT and the City of Boston to copy, distribute, display, and make derivatives of your work without any compensation to you.</li>
-
-          <li>You are the owner of your submission.</li>
-
-          <li> We reserve the right to disqualify any entry, and you agree not to hold us liable for anything in connection with the contest. </li>
-
-          <li> We will provide the prize to the registered account holder;  teams are responsible for divvying up money amongst themselves. </li>
-
-
-
+          <p>{{ form.tos.errors }}</p>
+          <p>
+            <input id="id_tos" name="tos" type="checkbox" style="width: 20px; height: 20px">
+            I have read and agree to the <a href="/static/rules.pdf">Official Rules</a>
+          </p>
         </td>
       </tr>
 
