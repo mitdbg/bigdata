@@ -2,7 +2,7 @@ Hello!
 
 Thanks for signing up for the MIT Big Data Challenge.  Your activation key is: {{activation_key}}
 
-or simply copy and paste: http://ec2-54-213-12-134.us-west-2.compute.amazonaws.com/accounts/activate/{{activation_key}}
+or simply copy and paste: http://bigdatachallenge.csail.mit.edu/accounts/activate/{{activation_key}}
 
 
 Please activate soon, because this code expires in {{expiration_days}} days!
