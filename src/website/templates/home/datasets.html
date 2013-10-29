@@ -46,7 +46,26 @@
     <tr>
       <td class="datasetname" rowspan="1">Twitter</td>
       <td>All</td>
-      <td>{% if user.is_authenticated %}<a href="">twitter.zip</a>{%else%}<a href="/accounts/login">login to download</a>{% endif %}</td>
+      <td>
+      	{% if user.is_authenticated %}
+	      <ul>
+		      <li><a href="">twitter_jan.zip</a></li>
+		      <li><a href="">twitter_feb.zip</a></li>
+		      <li><a href="">twitter_mar.zip</a></li>
+		      <li><a href="">twitter_apr.zip</a></li>
+		      <li><a href="">twitter_may.zip</a></li>
+		      <li><a href="">twitter_jun.zip</a></li>
+		      <li><a href="">twitter_jul.zip</a></li>
+		      <li><a href="">twitter_aug.zip</a></li>
+		      <li><a href="">twitter_sep.zip</a></li>
+		      <li><a href="">twitter_oct.zip</a></li>
+		      <li><a href="">twitter_nov.zip</a></li>
+		      <li><a href="">twitter_dec.zip</a></li>
+		  </ul>
+    	{%else%}
+    		<a href="/accounts/login">login to download</a>
+    	{% endif %}
+      </td>
     </tr>
     <tr>
       <td class="datasetname" rowspan="1">Weather</td>

@@ -44,6 +44,21 @@ def visualization(request):
       {'visform': visform})
 
 @login_required
+def download_twitter(request, fname=None):
+  valid_files = [
+      'jan', 'feb', 'mar', 'apr', 'may', 'jun', 
+      'jul', 'aug', 'sep', 'oct', 'nov', 'dec'
+  ]
+  if fname in valid_files:
+    r = HttpResponse()
+    r['Content-Disposition'] = 'attachment; filename={0}'.format(
+        '%s.tar.gz' % fname)
+    r['X-Accel-Redirect'] = '/protected/{0}'.format(
+        '/twitter/%s.tar.gz' % fname)
+    return r
+  return error("Could not find downloadable file {0}".format(fname))
+
+@login_required
 def profile(request):
   form = SubmitForm()
   visform = VisForm()
