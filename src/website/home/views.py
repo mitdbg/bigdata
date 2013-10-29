@@ -21,7 +21,7 @@ def render_page(request, pagename, context=None):
         'home/%s.html'%pagename, 
         context_instance=RequestContext(request))
 
-  return error("could not find %s" % pagename)
+  return error(request, "Whoops", "could not find %s" % pagename)
 
 def index(request):
   return page(request, "index")
@@ -44,19 +44,19 @@ def visualization(request):
       {'visform': visform})
 
 @login_required
-def download_twitter(request, fname=None):
+def download(request, fname=None):
   valid_files = [
       'jan', 'feb', 'mar', 'apr', 'may', 'jun', 
       'jul', 'aug', 'sep', 'oct', 'nov', 'dec'
   ]
+  valid_files = ['%s.tar.gz' % f for f in valid_files] + ['test.txt']
+
   if fname in valid_files:
     r = HttpResponse()
-    r['Content-Disposition'] = 'attachment; filename={0}'.format(
-        '%s.tar.gz' % fname)
-    r['X-Accel-Redirect'] = '/protected/{0}'.format(
-        '/twitter/%s.tar.gz' % fname)
+    r['Content-Disposition'] = 'attachment; filename=%s' % fname
+    r['X-Accel-Redirect'] = '/twitter/%s' % fname
     return r
-  return error("Could not find downloadable file {0}".format(fname))
+  return error(request, "Download Error", "Could not find downloadable file %s" % fname)
 
 @login_required
 def profile(request):
