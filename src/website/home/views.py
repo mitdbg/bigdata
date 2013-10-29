@@ -46,10 +46,16 @@ def visualization(request):
 @login_required
 def download(request, fname=None):
   valid_files = [
-      'jan', 'feb', 'mar', 'apr', 'may', 'jun', 
-      'jul', 'aug', 'sep', 'oct', 'nov', 'dec'
+    '2012_04.json.gz',
+    '2012_05.json.gz',
+    '2012_06.json.gz',
+    '2012_07.json.gz',
+    '2012_08.json.gz',
+    '2012_09.json.gz',
+    '2012_10.json.gz',
+    '2012_11.json.gz'
   ]
-  valid_files = ['%s.tar.gz' % f for f in valid_files] + ['test.txt']
+  valid_files += ['test.txt']
 
   if fname in valid_files:
     r = HttpResponse()
