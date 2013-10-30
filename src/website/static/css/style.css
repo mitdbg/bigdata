@@ -55,7 +55,7 @@ nav .logo {
   padding: 15px 0px 12px 0px;
 }
 nav .nav .dropdown-toggle .caret {
-  margin-top: none;
+  margin-top: .4em;
 }
 nav .nav-links {
   float: right;
