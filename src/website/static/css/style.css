@@ -54,6 +54,9 @@ nav .logo {
   font-size: 15pt;
   padding: 15px 0px 12px 0px;
 }
+nav .nav .dropdown-toggle .caret {
+  margin-top: none;
+}
 nav .nav-links {
   float: right;
 }
