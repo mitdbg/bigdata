@@ -53,7 +53,7 @@ def download(request, fname=None):
     '2012_08.json.gz',
     '2012_09.json.gz',
     '2012_10.json.gz',
-    '2012_11.json.gz'
+    '2012_11.json.gz',
     '2012_12.json.gz'
   ]
   valid_files += ['test.txt']
