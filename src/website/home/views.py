@@ -65,7 +65,7 @@ def download(request, fname=None):
   if fname in valid_files:
     r = HttpResponse()
     r['Content-Disposition'] = 'attachment; filename=%s' % fname
-    r['X-Accel-Redirect'] = '/data/%s' % fname
+    r['X-Accel-Redirect'] = '/private/%s' % fname
     return r
   return error(request, "Download Error", "Could not find downloadable file %s" % fname)
 
