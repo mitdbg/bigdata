@@ -1,24 +1,31 @@
-{% if user.is_authenticated and user.submissions.all %}
+{% if user.is_authenticated %}
 
-<!--<h2>Your Prediction Submissions</h2>-->
+  {% if user.submissions.all %}
 
-<ul class="infobox submission-list">
-  <li>
-    <div class="time">Time</div>
-    <div class="score">Score</div>
-    <div class="text">Prediction</div>
-    <div style="clear:both"></div>
-  </li>
+    <!--<h2>Your Prediction Submissions</h2>-->
 
-{% for s in user.submissions.most_recent %}
-  <li>
-    <div class="time">{{s.tstamp|date:"M d P"}}</div>
-    <div class="score">{{s.score_str}}</div>
-    <div class="code text">{{s.text}}</div>
-    <div style="clear:both"></div>
-  </li>
-{% endfor %}
-</ul>
+    <ul class="infobox submission-list">
+      <li>
+        <div class="time">Time</div>
+        <div class="score">Score</div>
+        <div class="text">Prediction</div>
+        <div style="clear:both"></div>
+      </li>
 
+    {% for s in user.submissions.most_recent %}
+      <li>
+        <div class="time">{{s.tstamp|date:"M d P"}}</div>
+        <div class="score">{{s.score_str}}</div>
+        <div class="code text">{{s.text}}</div>
+        <div style="clear:both"></div>
+      </li>
+    {% endfor %}
+    </ul>
+
+  {% else %}
+    <div class="infobox">
+      You have not made a visualization submission yet.
+    </div>
+  {% endif %}
 
 {% endif %}

@@ -1,30 +1,30 @@
-{% if user.is_authenticated and user.vis_submissions.all  %}
+{% if user.is_authenticated  %}
 
 
-<!--<h2>Your Recent Visualization Submissions</h2>-->
-{% if user.vis_submissions.all %}
+  <!--<h2>Your Recent Visualization Submissions</h2>-->
+  {% if user.vis_submissions.all %}
 
-  <ul class="infobox submission-list">
-    <li>
-      <div class="time">Time</div>
-      <div class="url">URL</div>
-      <div style="clear:both"></div>
-    </li>
+    <ul class="infobox submission-list">
+      <li>
+        <div class="time">Time</div>
+        <div class="url">URL</div>
+        <div style="clear:both"></div>
+      </li>
 
-  {% for s in user.vis_submissions.most_recent %}
-    <li>
-      <div class="time">{{s.tstamp|date:"M d P"}}</div>
-      <div class="url"><a href="{{s.url}}">{{s.url}}</a></div>
-      <div style="clear:both"></div>
-    </li>
-  {% endfor %}
-  </ul>
-{% else %}
-  <div class="infobox">
-    You have not made a visualization submission yet.
-  </div>
+    {% for s in user.vis_submissions.most_recent %}
+      <li>
+        <div class="time">{{s.tstamp|date:"M d P"}}</div>
+        <div class="url"><a href="{{s.url}}">{{s.url}}</a></div>
+        <div style="clear:both"></div>
+      </li>
+    {% endfor %}
+    </ul>
 
-{% endif %}
+  {% else %}
+    <div class="infobox">
+      You have not made a visualization submission yet.
+    </div>
+  {% endif %}
 
 
 {% endif %}
