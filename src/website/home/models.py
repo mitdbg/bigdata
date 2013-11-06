@@ -28,7 +28,7 @@ class Submission(models.Model):
 
   @property
   def score_str(self):
-    return str(self.score)[:6]
+    return "%0.6f" % self.score
 
   @property
   def prediction(self):
