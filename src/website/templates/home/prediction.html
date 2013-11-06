@@ -11,25 +11,31 @@
 <div class="section">
   <div class="textseparator"><h1>The Contest</h1></div>
 
-  <p>
-  We have collected 2 months worth of data (see below for descriptions
-  of the datasets).  In this challenge we will give you all of the data
-  except for several days of taxi data that we leave out.  Your job is 
-  to predict the total number of taxi trips within a number different 2 hour time spans during these omitted days at
-  several locations in downtown Boston.</p>
+  <p> 
+  We have collected 2 months worth of data (see below for
+  descriptions of the datasets).  In this challenge we will give
+  you all of the data except for a number of 2 hour time spans at
+  several locations in downtown Boston that we will remove from the
+  taxi pickup dataset.  Your job is to predict the total number of
+  taxi trips within those locations and 2 hour time spans. 
+  </p>
 
   <p>The locations will be specified as latitude, longitude points,
   and the prediction will be within a 250 meter radius of those points.
 
-  <p>We will give you around 50 location, timespan pairs.  Your score will
+  <p>
+  We will give you around 50 location, timespan pairs.  Your score will
   be computed as the root-mean-squared error of your predictions against the 
   ground truth.  That is, given your estimates  <img src="http://latex.codecogs.com/svg.latex?\Hat{p_1}\ldots \Hat{p_n}" border="0"/> for data points
    <img src="http://latex.codecogs.com/svg.latex?p_1\ldots p_n" border="0"/>
-   we will compute:<p><center><img src="http://latex.codecogs.com/svg.latex?\frac{1}{1+\sqrt{\sum_{i\in1\ldots n}{(p_i-\Hat{p_i})^2}}}" border="0"/></center></p>
+   we will compute:<p><center><img src="http://latex.codecogs.com/svg.latex?\frac{1}{1+\sqrt{\sum_{i\in1\ldots n}{(p_i-\Hat{p_i})^2}}}" border="0"/></center>
+   </p>
 
 
 
-    <p style="text-align: center"><a href="/datasets"><div class="buttonHolder"><button>Download the datasets here</button></div></a></p>
+  <p style="text-align: center">
+  <a href="/datasets"><div class="buttonHolder"><button>Download the datasets here</button></div></a>
+  </p>
 
   <h2>Timing</h2>
 
