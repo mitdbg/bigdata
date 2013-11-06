@@ -1,4 +1,4 @@
-{% if user.is_authenticated  %}
+{% if user.is_authenticated and user.vis_submissions.all  %}
 
 
 <!--<h2>Your Recent Visualization Submissions</h2>-->
