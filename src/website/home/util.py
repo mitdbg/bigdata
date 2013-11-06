@@ -47,9 +47,11 @@ CORRECT_DEMANDS = {
 37:  1  
 }
 
+# worry about giant ints
 def compute_score(demands, correct_demands=None):
   if not correct_demands:
     correct_demands = CORRECT_DEMANDS
+
   sqerrs = []
   for key in correct_demands:
     trueval = correct_demands[key]

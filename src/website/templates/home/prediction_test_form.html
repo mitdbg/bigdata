@@ -11,6 +11,14 @@
       <tr><td> <input type="submit" value="Submit"/></td></tr>
     </table>
   </form>
+  <script>
+    $("#id_text").click(function() {
+      var me = $("#id_text");
+      if (me.text() == "Copy and paste your submission contents here") {
+        me.text('');
+      }
+    });
+  </script>
 {% else %}
   Please <a href="/accounts/login">login</a> or 
   <a href="/accounts/register">register</a> to submit!

@@ -17,7 +17,6 @@ body{
 
 a, a:visited {
   font-weight: 700;
-  font-size: bigger;
 	color: #357097;
   text-decoration: none;
 }
@@ -151,6 +150,23 @@ nav {
     margin: 0px auto;
     text-align: center;
     margin-bottom: 30px;
+  }
+
+  .prizes {
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    /*background: none repeat scroll 0% 0% rgb(94, 205, 222);*/
+    background-color: rgb(62, 156, 230);
+    padding: 1em;
+    text-shadow: 0px 1px rgb(136, 136, 136);
+    font-weight: 800;
+    font-size: 17pt;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 1px 1px 1px rgb(170, 170, 170);
   }
 
   .thanks {
@@ -420,10 +436,10 @@ table.register {
 
 
 form {
-  background: #fff7e8;
-  width: 100%;
+  background: rgb(255, 255, 255);
   padding: 2em;
   text-align: center;
+  box-shadow: 0 0 2px 1px #ddd;
 
   textarea {
     width: 100%;
@@ -434,8 +450,8 @@ form {
 
 }
 
-button, input[type="submit"] {
-  font-size: 15pt;
+button, input[type="submit"], .button {
+  font-size: 14pt;
   font-weight: bold;
   width: 100%;
   text-align: center;
@@ -444,13 +460,21 @@ button, input[type="submit"] {
   color: white;
   border-radius: 2px;
   background-color: rgb(2, 144, 255);
+  background-color: rgb(62, 156, 230);
   border-top: 1px solid #efefef;
   border-left: 1px solid #efefef;
   border-right: 1px solid #5596B0;
   border-bottom: 1px solid #5596B0;
 }
 
-button:hover, input[type="submit"]:hover {
+a.button:visited {
+  font-size: 14pt;
+  font-weight: bold;
+  color: white;
+}
+
+
+button:hover, input[type="submit"]:hover, .button:hover {
   background-color: rgb(57, 145, 214);
   border-top: 1px solid rgb(46, 118, 146);
   border-left: 1px solid rgb(46, 118, 146);
@@ -485,7 +509,7 @@ button.disabled {
   width: 500px;
   margin: 0px auto;
   padding-top: 40px;
-	font-size: 9pt;
+	font-size: 12pt;
 	color: black;
 	text-align: center;
 	position: relative;
@@ -612,6 +636,11 @@ button.disabled {
     .section { 
       width: 100%; 
       font-size: 13pt;
+
+      button, input[type="submit"], .button, .button:visited {
+        font-size: 13pt;
+      }
+      
     }
 
   }
@@ -632,6 +661,11 @@ button.disabled {
       }
     }
   }
+
+  button, input[type="submit"], .button, .button:visited {
+    font-size: 12pt;
+  }
+
 }
 
 

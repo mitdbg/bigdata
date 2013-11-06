@@ -54,14 +54,18 @@ def download(request, fname=None):
     '2012_09.json.gz',
     '2012_10.json.gz',
     '2012_11.json.gz',
-    '2012_12.json.gz'
+    '2012_12.json.gz',
+    'pickups_train.csv.gz',
+    'dropoffs.csv.gz',
+    'wunderground.json.gz',
+    'events.csv.gz'
   ]
   valid_files += ['test.txt']
 
   if fname in valid_files:
     r = HttpResponse()
     r['Content-Disposition'] = 'attachment; filename=%s' % fname
-    r['X-Accel-Redirect'] = '/twitter/%s' % fname
+    r['X-Accel-Redirect'] = '/data/%s' % fname
     return r
   return error(request, "Download Error", "Could not find downloadable file %s" % fname)
 

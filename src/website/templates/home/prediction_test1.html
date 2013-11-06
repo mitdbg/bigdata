@@ -2,8 +2,15 @@
 {% block content %}
 
 <div class="section">
-<div class="textseparator"><h1>Prediction: Initial Test Dataset</h1></div>
+  <div class="heading">
+    For information about the rules and scoring functions, 
+    check out the <a href="/prediction">prediction description page</a>.
+  </div>
+</div>
 
+
+<div class="section">
+<div class="textseparator"><h1>Prediction: Initial Test Dataset</h1></div>
 
 <p>
 A sample of the list of locations and time ranges are listed below.
@@ -20,7 +27,7 @@ A sample of the list of locations and time ranges are listed below.
 <p>
 Each line consists of 
 <div class="code">
-	[location id],[start time],[end time],[latitude],[longitude]
+	[id],[start time],[end time],[latitude],[longitude]
 </div>
 </p>
 
@@ -34,7 +41,7 @@ Each line consists of
 
 
   <div class="code">    
-      [location id]<space>[number]
+      [id]<space>[number]
   </div>
 
   <p>The following example specifies that location 1 has demand 99, 2 has demand 105, and 3 has demand 209.</p>

@@ -11,7 +11,6 @@ body {
 a,
 a:visited {
   font-weight: 700;
-  font-size: bigger;
   color: #357097;
   text-decoration: none;
 }
@@ -127,6 +126,23 @@ nav .nav-links li:hover .dropdown-menu {
   margin: 0px auto;
   text-align: center;
   margin-bottom: 30px;
+}
+.content .prizes {
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  /*background: none repeat scroll 0% 0% rgb(94, 205, 222);*/
+
+  background-color: #3e9ce6;
+  padding: 1em;
+  text-shadow: 0px 1px #888888;
+  font-weight: 800;
+  font-size: 17pt;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px 1px #aaaaaa;
 }
 .content .thanks p {
   margin-top: 2em;
@@ -360,10 +376,10 @@ table.register tbody .errorlist li {
   border: none;
 }
 form {
-  background: #fff7e8;
-  width: 100%;
+  background: #ffffff;
   padding: 2em;
   text-align: center;
+  box-shadow: 0 0 2px 1px #ddd;
 }
 form textarea {
   width: 100%;
@@ -372,8 +388,9 @@ form textarea {
   font-size: 12pt;
 }
 button,
-input[type="submit"] {
-  font-size: 15pt;
+input[type="submit"],
+.button {
+  font-size: 14pt;
   font-weight: bold;
   width: 100%;
   text-align: center;
@@ -382,13 +399,20 @@ input[type="submit"] {
   color: white;
   border-radius: 2px;
   background-color: #0290ff;
+  background-color: #3e9ce6;
   border-top: 1px solid #efefef;
   border-left: 1px solid #efefef;
   border-right: 1px solid #5596B0;
   border-bottom: 1px solid #5596B0;
 }
+a.button:visited {
+  font-size: 14pt;
+  font-weight: bold;
+  color: white;
+}
 button:hover,
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+.button:hover {
   background-color: #3991d6;
   border-top: 1px solid #2e7692;
   border-left: 1px solid #2e7692;
@@ -415,7 +439,7 @@ button.disabled {
   width: 500px;
   margin: 0px auto;
   padding-top: 40px;
-  font-size: 9pt;
+  font-size: 12pt;
   color: black;
   text-align: center;
   position: relative;
@@ -535,6 +559,12 @@ button.disabled {
     width: 100%;
     font-size: 13pt;
   }
+  .content .section button,
+  .content .section input[type="submit"],
+  .content .section .button,
+  .content .section .button:visited {
+    font-size: 13pt;
+  }
   .infobox {
     width: 85%;
   }
@@ -550,5 +580,11 @@ button.disabled {
     font-size: 15px;
     padding: 15px 5px 0px 5px;
     margin: 0px 5px 0px 5px;
+  }
+  button,
+  input[type="submit"],
+  .button,
+  .button:visited {
+    font-size: 12pt;
   }
 }
