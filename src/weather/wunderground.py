@@ -1,5 +1,4 @@
 import requests
-import bsddb3
 import time
 import json
 from pyquery import PyQuery as pq
@@ -9,7 +8,7 @@ URL = "http://api.wunderground.com/api/57929e89bff6b6d4/history_%s/q/MA/Boston.j
 FNAME = "./wunderground.json"
 db = []
 
-months = [6,7]
+months = [5,6,7,8,9]
 days = range(1,32)
 
 for month in months:
@@ -17,8 +16,12 @@ for month in months:
     date = "2012%02d%02d" % (month, day)
     url = URL % date
     html = requests.get(url).content
-    data = json.loads(html)
-    db.append(data)
+    try:
+      data = json.loads(html)
+      db.append(data)
+    except:
+      print date
+      pass
 
 with file(FNAME, 'w') as f:
   f.write(json.dumps(db))
