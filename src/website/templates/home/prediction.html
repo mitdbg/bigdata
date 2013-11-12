@@ -2,6 +2,7 @@
 {% block content %}
 
 <div class="section">
+  <div class="textseparator"><h1>Introduction</h1></div>
   <div class="heading">
   <p>
   The goal of this challenge is to predict taxi demand (total # of taxi trips) in downtown Boston based on historical taxi data and other related data sets (weather, events, social media data).   
@@ -21,23 +22,31 @@
   you all of the data except for a number of 2 hour time spans at
   several locations in downtown Boston that we will remove from the
   taxi pickup dataset.  Your job is to predict the total number of
-  taxi trips within those locations and 2 hour time spans. 
+  taxi trips within 250 meters of the locations and the 2 hour time spans. 
   </p>
 
-  <p>The locations will be specified as latitude, longitude points,
-  and the prediction will be within a 250 meter radius of those points.
-
-  <p>
-  We will give you around 50 location, timespan pairs.  Your score will
+  <p>We will give you a list of location (latitude, longitude points) and timespan pairs.  Your score will
   be computed as the root-mean-squared error of your predictions against the 
-  ground truth.  That is, given your estimates  <img src="http://latex.codecogs.com/svg.latex?\Hat{p_1}\ldots \Hat{p_n}" border="0"/> for data points
+  ground truth.  
+  Specifically, given your estimates  <img src="http://latex.codecogs.com/svg.latex?\Hat{p_1}\ldots \Hat{p_n}" border="0"/> for data points
    <img src="http://latex.codecogs.com/svg.latex?p_1\ldots p_n" border="0"/>
-   we will compute:<p><center><img src="http://latex.codecogs.com/svg.latex?\frac{1}{1+\sqrt{\sum_{i\in1\ldots n}{(p_i-\Hat{p_i})^2}}}" border="0"/></center>
-   </p>
+   we will compute:
+  </p>
+  <p style="margin: 2em; text-align: center;">
+    <img src="http://latex.codecogs.com/svg.latex?\frac{1}{1+\sqrt{\sum_{i\in1\ldots n}{(p_i-\Hat{p_i})^2}}}" border="0"/>
+  </p>
+
+  
+  <p>The pickups used to compute the ground truth at each location and timespan
+  will be computed using the following filter:
+  <div class='code'>
+    ((pickup.lat - location.lat)^2 + (pickup.lon - location.lon)^2) < 0.00224946357 and
+     (pickup.time >= timespan.start and pickup.time <= timespan.end)</div>
+  </p>
 
 
 
-  <p style="text-align: center">
+  <p style="text-align: center; margin-top: 2em;">
   <a href="/datasets"><div class="buttonHolder"><button>Download the datasets here</button></div></a>
   </p>
 
@@ -68,11 +77,11 @@
 
 
   <a href="prediction_test1"><div class="buttonHolder">
-      <button class="start-trial">Submit Initial Test Dataset</button>
+      <button class="start-trial">Submit Initial Test Predictions</button>
   </div></a>
 <p>
   <div class="buttonHolder">
-    <button class="start-trial disabled">Final Test Dataset (available on XXX)</button>
+    <button class="start-trial disabled">Final Test Prediction (available on Jan 6, 2014)</button>
   </div>
 
 </div>

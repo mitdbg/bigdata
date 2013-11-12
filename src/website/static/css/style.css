@@ -144,6 +144,25 @@ nav .nav-links li:hover .dropdown-menu {
   border-radius: 5px;
   box-shadow: 0px 1px 1px 1px #aaaaaa;
 }
+.content .launch-dates {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  padding: 20px;
+}
+.content .launch-dates .launch-date {
+  text-align: center;
+  float: left;
+  width: 50%;
+  margin: none;
+  padding: none;
+}
+.content .launch-dates .launch-date .launch-label {
+  display: block;
+  font-weight: bold;
+  font-size: 18pt;
+}
 .content .thanks p {
   margin-top: 2em;
   margin-bottom: 10px;
@@ -445,10 +464,16 @@ button.disabled {
   position: relative;
   clear: both;
 }
-.company-logo {
-  display: block;
-  margin: auto;
+.company-logos {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.company-logos .company-logo {
+  display: inline;
   vertical-align: middle;
+  margin: 15px;
 }
 @media (max-width: 1330px) {
   nav {
