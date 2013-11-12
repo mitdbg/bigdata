@@ -66,6 +66,7 @@ def download(request, fname=None):
     r = HttpResponse()
     r['Content-Disposition'] = 'attachment; filename=%s' % fname
     r['X-Accel-Redirect'] = '/private/%s' % fname
+    r['Content-Type'] = 'application/octet-stream'
     return r
   return error(request, "Download Error", "Could not find downloadable file %s" % fname)
 
