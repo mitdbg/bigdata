@@ -1,3 +1,4 @@
+import re
 from django.conf.urls import patterns, include, url
 from registration.forms import RegistrationFormTermsOfService
 from registration.backends.default.views import RegistrationView
@@ -7,8 +8,19 @@ from home.forms import *
 # from django.contrib import admin
 # admin.autodiscover()
 
+
+mitcheck = re.compile('[@\.]mit.edu$')
+class MyRegistrationForm(RegistrationFormTermsOfService):
+
+  def clean_email(self):
+    email = self.cleaned_data['email']
+    if not mitcheck.search(email):
+      raise forms.ValidationError("We ask that you register your team using an mit.edu email account")
+    return self.cleaned_data['email']
+
 class MyRegistrationView(RegistrationView):
-  form_class = RegistrationFormTermsOfService
+  #form_class = RegistrationFormTermsOfService
+  form_class = MyRegistrationForm
 
 urlpatterns = patterns('',
     # Examples:
