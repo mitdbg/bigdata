@@ -40,7 +40,7 @@
   <p>The pickups used to compute the ground truth at each location and timespan
   will be computed using the following filter:
   <div class='code'>
-    ((pickup.lat - location.lat)^2 + (pickup.lon - location.lon)^2) < 0.00224946357 and
+    ((pickup.lat - location.lat)^2 + (pickup.lon - location.lon)^2)^0.5 < 0.00224946357 and
      (pickup.time >= timespan.start and pickup.time <= timespan.end)</div>
   </p>
 
