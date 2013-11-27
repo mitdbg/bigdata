@@ -7,10 +7,22 @@
   
   <div class="textseparator"><h1>Stats</h1></div>
   <p>
-    nsubmissions: {{nsubmissions}}
+    number of prediction submissions: {{npsubmissions}}
   </p>
   <p>
-    nusers: {{nusers}}
+    number of viz submissions: {{nvsubmissions}}
+    <a href="#" onclick='$("#vis_submissions").toggle()'>showall</a>
+    <div id="vis_submissions" style="display:none">
+    <ul>
+      {% for s in vsubmissions %}
+      <li>{{s.user.email}}: <a href="{{s.url}}">{{s.url}}</a>
+      {% endfor %}
+    </ul>
+    </div>
+  </p>
+
+  <p>
+    number of users: {{nusers}}
   </p>
 
 </div>

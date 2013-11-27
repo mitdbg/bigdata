@@ -108,11 +108,15 @@ def submit_vis(request):
 
 def stats(request, password):
   if password == 'imjusthereforthefood':
-    nsubmissions = Submission.objects.count()
+    npsubmissions = Submission.objects.count()
+    nvsubmissions = VisSubmission.objects.count()
+
     nusers = User.objects.count()
 
     data = {
-      'nsubmissions': nsubmissions,
+      'npsubmissions': npsubmissions,
+      'nvsubmissions': nvsubmissions,
+      'vsubmissions': VisSubmission.objects.all(),
       'nusers': nusers
     }
     
