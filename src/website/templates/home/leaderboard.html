@@ -13,7 +13,10 @@
 
   {% for s in submissions %}
     <li>
-      <div class="user">{{s.user.username}}</div>
+      <div class="user">
+        {{s.user.username}}
+        {% if forloop.first %}<span class="leader">1st</span>{% endif %}
+      </div>
       <div class="time">{{s.tstamp|date:"M d P"}}</div>
       <div class="score">{{s.score_str}}</div>
       <div style="clear:both"></div>
