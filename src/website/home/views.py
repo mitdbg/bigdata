@@ -105,3 +105,17 @@ def submit_vis(request):
     form = VisForm()
   return render(request, 'home/visualization.html', { 'visform': form })
 
+
+def stats(request, password):
+  if password == 'imjusthereforthefood':
+    nsubmissions = Submission.objects.count()
+    nusers = User.objects.count()
+
+    data = {
+      'nsubmissions': nsubmissions,
+      'nusers': nusers
+    }
+    
+    return render(request, 'home/stats.html', data)
+
+  return HttpResponseRedirect('/')
