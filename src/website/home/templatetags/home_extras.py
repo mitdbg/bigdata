@@ -13,10 +13,13 @@ def infobox(user):
 def leaderboard(context):
   uids = set()
   topk = []
-  for s in Submission.objects.order_by('score'):
+  for s in Submission.objects.order_by('-score'):
     if len(uids) >= 10:
       break
     if s.user.id in uids:
       continue
     topk.append(s)
+    uids.add(s.user.id)
+    if len(topk) > 8:
+      break
   return {'submissions': topk}
