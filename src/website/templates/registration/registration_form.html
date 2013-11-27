@@ -9,7 +9,7 @@
   {% csrf_token %}
   <table class="register">
     <tbody><tr class="required"><th><label for="id_username">Username:</label></th><td>{{ form.username }}{{ form.username.errors }}</td></tr>
-      <tr class="required"><th><label for="id_email">E-mail:</label></th><td>{{ form.email }} {{ form.email.errors }}</td></tr>
+      <tr class="required"><th><label for="id_email">MIT E-mail:</label></th><td>{{ form.email }} {{ form.email.errors }}</td></tr>
       <tr class="required"><th><label for="id_password1">Password:</label></th><td>{{ form.password1 }}{{ form.password1.errors }}</td></tr>
       <tr class="required"><th><label for="id_password2">Password (again):</label></th><td>{{ form.password2 }}{{form.password2.errors}}</td></tr>
       <tr class="required">
