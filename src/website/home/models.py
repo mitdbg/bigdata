@@ -21,7 +21,7 @@ class Submission(models.Model):
   objects = SubManager()
 
   user = models.ForeignKey(User, related_name="submissions")
-  text = models.CharField(max_length=4280, null=False)
+  text = models.TextField(null=False)
   score = models.FloatField(null=False)
   submit_type = models.IntegerField(default=TEST)
   tstamp = models.DateTimeField(auto_now_add=True)
