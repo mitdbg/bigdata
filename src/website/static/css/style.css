@@ -157,6 +157,7 @@ nav .nav-links li:hover .dropdown-menu {
   width: 50%;
   margin: none;
   padding: none;
+  text-shadow: #f5f5f5 -1px -1px 3px;
 }
 .content .launch-dates .launch-date .launch-label {
   display: block;
@@ -255,6 +256,17 @@ nav .nav-links li:hover .dropdown-menu {
 }
 .content ul.submission-list .user {
   width: 10em;
+}
+.content ul.submission-list .user .leader {
+  background: steelblue;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: smaller;
+  font-weight: bold;
+  margin-left: .5em;
 }
 .content ul.submission-list .time {
   width: 10em;
