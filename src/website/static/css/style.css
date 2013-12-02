@@ -243,15 +243,12 @@ nav .nav-links li:hover .dropdown-menu {
   padding: 5px 10px;
 }
 .content ul.updates li .time {
-  background: steelblue;
-  color: white;
-  border-radius: 4px;
-  padding: 5px;
+  color: steelblue;
+  padding-right: 5px;
   padding-top: 1px;
   padding-bottom: 1px;
   font-size: smaller;
   font-weight: bold;
-  margin-right: 1em;
   display: inline;
 }
 .content ul.updates li:last-of-type {
