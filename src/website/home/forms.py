@@ -19,6 +19,9 @@ class SubmitForm(Form):
     data = self.cleaned_data['text']
     try:
       prediction = parse(data)
+      print prediction
+      print CORRECT_DEMANDS
+
       score = compute_score(prediction)
       self.cleaned_data['score'] = score
     except Exception as e:

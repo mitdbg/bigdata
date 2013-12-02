@@ -1,11 +1,5 @@
 
 
-CORRECT_DEMANDS = {
-  1: 90,
-  2: 100, 
-  3: 205
-}
-
 TEST1_COUNTS = """0 9
 1 0
 2 80
