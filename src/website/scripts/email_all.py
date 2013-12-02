@@ -1,5 +1,5 @@
 from header import *
-from django.core.mail import send_mail
+from django.core.mail import send_mail, send_mass_mail
 
 subject = "Update to prediction challenge specification"
 text = """Dear %s,
