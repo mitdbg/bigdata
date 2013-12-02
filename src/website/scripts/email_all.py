@@ -39,4 +39,9 @@ if len(sys.argv) > 1:
 
 
 if send:
-  send_mass_mail(tuple(datas), fail_silently=False)
+  for data in datas:
+    try:
+      print "sending to %s" % (data[3][0])
+      send_mail(*data, fail_silently=False)
+    except Exception as e:
+      print "error %s " % e
