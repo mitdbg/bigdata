@@ -24,6 +24,7 @@ for user in User.objects.all():
   msg = text % user.username
   email = (subject, msg, "bigdatachallenge@gmail.com", (user.email,))
   datas.append(email)
+totaln = len(datas)
 
 print "email:   %s" % datas[0][3]
 print "subject: %s" % datas[0][0]
@@ -39,9 +40,9 @@ if len(sys.argv) > 1:
 
 
 if send:
-  for data in datas:
+  for n, data in enumerate(datas):
     try:
-      print "sending to %s" % (data[3][0])
+      print "sending to %d of %d: %s" % (n, totaln, data[3][0])
       send_mail(*data, fail_silently=False)
     except Exception as e:
       print "error %s " % e
