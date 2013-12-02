@@ -34,7 +34,7 @@ print datas[0][1]
 send = False
 if len(sys.argv) > 1:
   if sys.argv[1] == 'send':
-    raw_input("mass sending are you sure?  ctrl-c to abort!")
+    raw_input("mass sending to %s?  ctrl-c to abort!" % len(datas))
     send = True
 
 
