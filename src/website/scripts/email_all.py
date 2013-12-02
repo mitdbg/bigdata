@@ -22,7 +22,7 @@ MIT Big Data Challenge
 datas = []
 for user in User.objects.all():
   msg = text % user.username
-  email = (subject, msg, "bigdatachallenge@gmail.com", user.email)
+  email = (subject, msg, "bigdatachallenge@gmail.com", (user.email,))
   datas.append(email)
 
 print "email:   %s" % datas[0][3]
