@@ -24,6 +24,11 @@
   <p>
     number of users: {{nusers}}
   </p>
+  <ul>
+    {% for u in users %}
+    <li>{{u.email}}</li>
+    {% endfor %}
+  </ul>
 
 </div>
 

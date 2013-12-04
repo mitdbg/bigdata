@@ -112,12 +112,14 @@ def stats(request, password):
     nvsubmissions = VisSubmission.objects.count()
 
     nusers = User.objects.count()
+    users = User.objects.all()
 
     data = {
       'npsubmissions': npsubmissions,
       'nvsubmissions': nvsubmissions,
       'vsubmissions': VisSubmission.objects.all(),
-      'nusers': nusers
+      'nusers': nusers,
+      'users': users
     }
     
     return render(request, 'home/stats.html', data)
