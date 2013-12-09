@@ -9,6 +9,7 @@ FNAME = "./wunderground.json"
 db = []
 
 months = [5,6,7,8,9]
+months = [10,11,12]
 days = range(1,32)
 
 for month in months:

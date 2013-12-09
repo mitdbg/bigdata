@@ -113,12 +113,18 @@ def stats(request, password):
 
     nusers = User.objects.count()
     users = User.objects.all()
+    from django.db import connection
+    cursor = connection.cursor()
+    counts = []
+    for row in cursor.execute("select date_joined::date as date, count(*) from auth_user group by date order by date").fetchall():
+      counts.append([row[0], row[1]])
 
     data = {
       'npsubmissions': npsubmissions,
       'nvsubmissions': nvsubmissions,
       'vsubmissions': VisSubmission.objects.all(),
       'nusers': nusers,
+      'counts': counts,
       'users': users
     }
     
