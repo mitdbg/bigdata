@@ -96,7 +96,11 @@
   The taxi data contains pickup training data. Each file is tab delimited containing:
   
   <div class="code">
-    [random trip id],[timestamp],[address],[longitude],[latitude] </div>
+    [random trip id],[timestamp],[address],[longitude],[latitude] 
+  </div>
+
+  The trip id is consistent with the trip id in the dropoffs dataset.  However be careful because value is only unique within a given month -- 
+  it resets at the beginning of each month.
 </p>
 
 <h2>Taxi Dropoffs</h2>
