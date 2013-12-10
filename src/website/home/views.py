@@ -108,26 +108,25 @@ def submit_vis(request):
 
 def stats(request, password):
   if password == 'imjusthereforthefood':
-    npsubmissions = Submission.objects.count()
-    nvsubmissions = VisSubmission.objects.count()
+    try:
+      npsubmissions = Submission.objects.count()
+      nvsubmissions = VisSubmission.objects.count()
 
-    nusers = User.objects.count()
-    users = User.objects.all()
-    from django.db import connection
-    cursor = connection.cursor()
-    counts = []
-    for row in cursor.execute("select date_joined::date as date, count(*) from auth_user group by date order by date").fetchall():
-      counts.append([row[0], row[1]])
+      nusers = User.objects.count()
+      users = User.objects.all()
 
-    data = {
-      'npsubmissions': npsubmissions,
-      'nvsubmissions': nvsubmissions,
-      'vsubmissions': VisSubmission.objects.all(),
-      'nusers': nusers,
-      'counts': counts,
-      'users': users
-    }
-    
-    return render(request, 'home/stats.html', data)
+      data = {
+        'npsubmissions': npsubmissions,
+        'nvsubmissions': nvsubmissions,
+        'vsubmissions': VisSubmission.objects.all(),
+        'nusers': nusers,
+        'users': users
+      }
+      
+      return render(request, 'home/stats.html', data)
+    except Error as e:
+      print e
+      return error(request, "whoops", str(e))
+      
 
   return HttpResponseRedirect('/')
