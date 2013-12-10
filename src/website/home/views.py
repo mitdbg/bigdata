@@ -55,6 +55,7 @@ def download(request, fname=None):
     '2012_10.json.gz',
     '2012_11.json.gz',
     '2012_12.json.gz',
+    'interestpoints.csv',
     'pickups_train.csv.gz',
     'dropoffs.csv.gz',
     'wunderground.json.gz',
