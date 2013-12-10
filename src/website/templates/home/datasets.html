@@ -5,6 +5,11 @@
   <div class="textseparator"><h1>Updates and Clarifications</h1></div>
   <ul class="infobox updates">
     <li> 
+      <div class="time">Dec 10 6PM</div>
+      Added points of interest dataset.  This data is used for the locations in the prediction
+      challenge.
+    </li>
+    <li> 
       <div class="time">Dec 9 6PM</div>
       The pickups dataset spans from May to end of November, not October as originally stated.
       The dropoffs dataset has been extended to November.
@@ -49,6 +54,11 @@
       <td class="datasetname" rowspan="1">Taxi Dropoffs</td>
       <td>All taxi dropoffs in central Boston between May and November 2012.</td>
       <td>{% if user.is_authenticated %}<a href="/download/dropoffs.csv.gz">dropoffs.csv.gz (50M)</a>{%else%}<a href="/accounts/login">login to download</a>{% endif %}</td>
+    </tr>
+    <tr>
+      <td class="datasetname" rowspan="1">Points of Interest</td>
+      <td>The list of points of interest used for the prediction challenge</td>
+      <td>{% if user.is_authenticated %}<a href="/download/interestpoints.csv">interestpoints.csv</a>{%else%}<a href="/accounts/login">login to download</a>{% endif %}</td>
     </tr>
     <tr>
       <td class="datasetname" rowspan="1">MBTA</td>
