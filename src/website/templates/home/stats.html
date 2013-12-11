@@ -50,7 +50,7 @@
       },
       scales: {x: 'time'},
       data: data,
-      opts: { w: 800, h: 400 }
+      opts: { w: 800, h: 400, xaxis: "Date", yaxis: "# Signups" }
     };
     var plot = gg(spec);
     plot.render(d3.select('#plot'));
