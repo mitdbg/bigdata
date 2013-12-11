@@ -1,6 +1,4 @@
 from operator import or_
-from sympy.geometry import *
-from sympy.core.numbers import Rational
 from sqlalchemy import *
 import matplotlib.pyplot as plt
 from datetime import *
@@ -36,38 +34,44 @@ class Filterer(object):
     self.lon = lon
     self.time = time
 
-  def query(self, latlons, timeranges):
-    query = "select * from %s where %s" % (self.table, self.positive_where(latlons, timeranges))
-    print query
+  # @param blocks array of block
+  #block: [lat, lon, starttime, endtime]
+  def query(self, blocks):
+    query = "select * from %s where %s" % (self.table, self.positive_where(blocks))
     return query
 
-  def negate_query(self, latlons, timeranges):
-    query = "select * from %s where not(%s)" % (self.table, self.positive_where(latlons, timeranges))
+  def negate_query(self, blocks):
+    query = "select * from %s where not(%s)" % (self.table, self.positive_where(blocks))
     print query
     return query
   
-  def count(self, latlon, timerange):
-    db = create_engine("postgresql://localhost:5432/bigdata")
+  def count(self, block, db=None):
+    if not db:
+      db = create_engine("postgresql://localhost:5432/bigdata")
+    lat, lon, s, e = tuple(block)
     q = """select count(*) from %s where
      (((%s - %f)^2 + (%s - %f)^2)^0.5 < %f) and (%s >= '%s' and %s <= '%s')""" % (
         self.table,
-        self.lat, latlon[0], self.lon, latlon[1], self.radius,
-        self.time, timerange[0], self.time, timerange[1]
+        self.lat, lat, self.lon, lon, self.radius,
+        self.time, s, self.time, e
       )
+    print q
     row = db.execute(q).fetchone()
     return row[0]
 
-  def positive_where(self, latlons, timeranges):
+  def positive_where(self, blocks):
     wheres = []
 
-    if latlons:
-      locwheres = []
-      for latlon in latlons:
-        locwheres.append(
-            "((%s - %f)^2 + (%s - %f)^2)^0.5 < %f" % (self.lat, latlon[0], self.lon, latlon[1], self.radius)
-            )
-      wheres.append('(%s)' % ' or '.join(locwheres))
+    if blocks:
+      for block in blocks:
+        lat, lon, s, e = tuple(block)
+        wheres.append(
+          """((((%s - %f)^2 + (%s - %f)^2)^0.5 < %f) and (%s >= '%s' and %s <= '%s'))""" % (
+            self.lat, lat, self.lon, lon, self.radius,
+            self.time, s, self.time, e)
+        )
 
+    return ' or '.join(wheres)
 
     twheres = []
     for tr in timeranges:
@@ -76,6 +80,30 @@ class Filterer(object):
 
     where = ' and '.join(wheres)
     return where
+
+
+db = create_engine("postgresql://localhost:5432/bigdata")
+fil = Filterer(table='pickups_train', lat='pickup_lat', lon='pickup_long', time='pickup_time')
+with file('data/test1_2hrspans.txt', 'r') as f:
+  blocks = []
+  for l in f:
+    arr = l.split(',')
+    from dateutil import parser
+    s = parser.parse(arr[1])
+    e = parser.parse(arr[2])
+    lat = float(arr[3])
+    lon = float(arr[4])
+    blocks.append((lat, lon, s, e))
+    if (arr[0] == '656'):
+      count = fil.count((lat, lon, s, e), db)
+      print "%s\t%s" % (arr[0], count)
+
+
+
+
+
+
+exit()
 
 with file('../interestlocations/interestpoints.csv') as f:
   dialect = csv.Sniffer().sniff(f.read(1024))
