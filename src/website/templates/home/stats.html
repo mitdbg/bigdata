@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
 
+
 {% block content %}
+<script src="/static/js/gg.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/gg.css"/>
 
 <div class="section">
   
@@ -24,6 +27,9 @@
   <p>
     number of users: {{nusers}}
   </p>
+  <p>
+    <div id="plot"></div>
+  </p>
   <ul>
     {% for u in users %}
     <li>{{u.email}}</li>
@@ -32,6 +38,22 @@
 
 </div>
 
+<script>
+  $(function() {
+    var data = {{counts|safe}};
+    console.log(data);
+    var spec = {
+      geom: 'rect',
+      aes: {
+        x: "{new Date(x)}"
+      },
+      scales: {x: 'date'},
+      data: data
+    };
+    var plot = gg(spec);
+    plot.render(d3.select('#plot'));
+  });
+</script>
 
 {% endblock %}
 

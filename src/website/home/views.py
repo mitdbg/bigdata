@@ -115,12 +115,13 @@ def stats(request, password):
 
       nusers = User.objects.count()
       users = User.objects.all()
-			from django.db import connection
-			cursor = connection.cursor()
-			counts = []
-			cursor.execute("select date_joined::date as date, count(*) from auth_user group by date order by date")
-			for row in cursor.fetchall():
-				counts.append([row[0], row[1]])
+      from django.db import connection
+      cursor = connection.cursor()
+      counts = []
+      cursor.execute("select date_joined::date as date, count(*) from auth_user group by date order by date")
+      for row in cursor.fetchall():
+        counts.append({'x':row[0].isoformat(), 'y':int(row[1])})
+      cursor.close()
 
       data = {
         'npsubmissions': npsubmissions,
@@ -132,7 +133,7 @@ def stats(request, password):
       }
       
       return render(request, 'home/stats.html', data)
-    except Error as e:
+    except Exception as e:
       print e
       return error(request, "whoops", str(e))
       
