@@ -41,13 +41,14 @@
 <script>
   $(function() {
     var data = {{counts|safe}};
+
     console.log(data);
     var spec = {
       layers: [{geom: 'rect'}],
       aes: {
         x: "{new Date(x)}"
       },
-      scales: {x: 'date'},
+      scales: {x: 'time'},
       data: data
     };
     var plot = gg(spec);
