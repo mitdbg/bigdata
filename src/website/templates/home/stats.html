@@ -43,7 +43,7 @@
     var data = {{counts|safe}};
     console.log(data);
     var spec = {
-      geom: 'rect',
+      layers: [{geom: 'rect'}],
       aes: {
         x: "{new Date(x)}"
       },
