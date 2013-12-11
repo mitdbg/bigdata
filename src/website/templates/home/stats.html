@@ -49,7 +49,8 @@
         x: "{new Date(x)}"
       },
       scales: {x: 'time'},
-      data: data
+      data: data,
+      opts: { w: 800, h: 400 }
     };
     var plot = gg(spec);
     plot.render(d3.select('#plot'));
