@@ -8,7 +8,6 @@
       <div class="user">User</div>
       <div class="time">Time</div>
       <div class="score">Score</div>
-      <div class="score">Score * # locations</div>
       <div style="clear:both"></div>
     </li>
 
@@ -20,7 +19,6 @@
       </div>
       <div class="time">{{s.tstamp|date:"M d P"}}</div>
       <div class="score">{{s.score_str}}</div>
-      <div class="score">{{s.normalized_score_str}}</div>
       <div style="clear:both"></div>
     </li>
   {% endfor %}
