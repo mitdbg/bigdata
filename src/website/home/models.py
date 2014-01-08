@@ -28,7 +28,19 @@ class Submission(models.Model):
 
   @property
   def score_str(self):
-    return "%0.6f" % self.score
+    if self.submit_type == 1:
+      return "%0.7f" % self.score
+    else:
+      return "hidden"
+
+  @property
+  def normalized_score_str(self):
+    if self.submit_type == 1:
+      return "%0.7f" % (self.score * 678)
+    else:
+      return "hidden"
+
+
 
   @property
   def prediction(self):

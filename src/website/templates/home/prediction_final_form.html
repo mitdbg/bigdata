@@ -1,0 +1,37 @@
+
+<p>This is the submission form for the final prediction.  
+  Submissions using this form will not update the leaderboard and scores
+  will only be shown at the end of the challenge.</p>
+  <p>
+  Please use the <a href="/prediction_test1">Submit Initial Test</a>
+  form to continue evaluating your predictions on the initial test 
+  dataset, <a href="/datasets">which has been released</a>.
+  </p>
+
+
+
+{% if user.is_authenticated %}
+  <form action="/prediction_test2/" method="post">
+    <table class="register">
+    {{test2form.submit_type}}
+      <tr><td>
+      {{test2form.text.errors}}
+      {{test2form.text}}
+      </td></tr>
+      <tr><td> <input type="submit" value="Submit"/></td></tr>
+    </table>
+  </form>
+  <script>
+    $("#id_text").click(function() {
+      var me = $("#id_text");
+      if (me.text() == "Copy and paste your submission contents here") {
+        me.text('');
+      }
+    });
+  </script>
+{% else %}
+  Please <a href="/accounts/login">login</a> or 
+  <a href="/accounts/register">register</a> to submit!
+{% endif %}
+
+

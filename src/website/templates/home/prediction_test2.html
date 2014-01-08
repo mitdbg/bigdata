@@ -9,26 +9,7 @@
 </div>
 
 <div class="section">
-  <div class="textseparator"><h1>Updates and Clarifications</h1></div>
-  <ul class="infobox updates">
-    <li> 
-      <div class="time">Jan 7 9:00pm</div>
-      The final prediction points and submission form
-      have been released.  <a href="/prediction_test2">Click
-        here</a> to submit.
-    </li>
-    <li> 
-      <div class="time">Dec 2 1:00pm</div>
-      The original list of timespans were 4 hours in length.
-      We have updated the list and the sample below to the correct 2 hour time spans.
-    </li>
-  </ul>
-</div>
-
-
-
-<div class="section">
-<div class="textseparator"><h1>Prediction: Initial Test Dataset</h1></div>
+  <div class="textseparator"><h1>Prediction: Final Test Dataset</h1></div>
 
 <p>
 A sample of the list of locations and time ranges are listed below.
@@ -49,8 +30,11 @@ Each line consists of
 </div>
 </p>
 
-<a href="https://s3.amazonaws.com/mitbigdata/datasets/test1.txt"><button>Download full list</button></a>
+
+  <a href="https://s3.amazonaws.com/mitbigdata/datasets/test2.txt"><button>Download full list</button></a>
 </div>
+
+
 
 <div class="section">
   <div class="textseparator"><h1>Submission Format</h1></div>
@@ -96,9 +80,9 @@ Each line consists of
 
 <div class="section">
   <a name="submit"></a>
+  <div class="textseparator"><h1>Submit Final Test</h1></div>
+  {% include "home/prediction_final_form.html" %}
 
-  <div class="textseparator"><h1>Submit Initial Test</h1></div>
-  {% include "home/prediction_test_form.html" %}
 </div>
 
 

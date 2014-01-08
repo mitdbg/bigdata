@@ -57,6 +57,7 @@ def download(request, fname=None):
     '2012_12.json.gz',
     'interestpoints.csv',
     'pickups_train.csv.gz',
+    'pickups_test1.csv',
     'dropoffs.csv.gz',
     'wunderground.json.gz',
     'events.csv.gz'
@@ -92,6 +93,20 @@ def test1(request):
   else:
     form = SubmitForm()
   return render(request, 'home/prediction_test1.html', {'test1form': form})
+
+
+@login_required
+def test2(request):
+  if request.method == 'POST':
+    form = FinalSubmitForm(request.POST)
+
+    if form.is_valid():
+      form.save(request.user)
+
+      return HttpResponseRedirect('/account')
+  else:
+    form = FinalSubmitForm()
+  return render(request, 'home/prediction_test2.html', {'test2form': form})
 
 
 
