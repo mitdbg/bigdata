@@ -122,6 +122,11 @@ def submit_vis(request):
   return render(request, 'home/visualization.html', { 'visform': form })
 
 
+def gallery(request, password):
+  if password == 'imjusthereforthefood':
+    return render(request, 'home/gallery.html', {})
+  return HttpResponseRedirect('/')
+
 def stats(request, password):
   if password == 'imjusthereforthefood':
     try:
