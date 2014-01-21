@@ -31,7 +31,7 @@ d3.csv("/static/gallery.csv", function(d) {
   console.log(d)
   return {
     img: "/static/gallery/" + d.name.split(' ').join("_") + ".png",
-    name: d.name,
+    name: d.name.split('@')[0],
     url: d.url
   }; 
 }, function(err, rows) {
