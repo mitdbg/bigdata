@@ -1,6 +1,11 @@
 <!--<p>The final submission form will appear in the last week of competition.  You can use the form below to test your predictions.</p>-->
 
 {% if user.is_authenticated %}
+  The challenge has ended!  All submissions after Jan 20, 11:59:59PM will not be considered.
+  The winners of both challenges will be announce at
+  the final event on February 5th.   The scores for the final predictions will be released that day as well.
+
+<!--
   <form action="/prediction_test1/" method="post">
     <table class="register">
     {{test1form.submit_type}}
@@ -19,6 +24,7 @@
       }
     });
   </script>
+-->
 {% else %}
   Please <a href="/accounts/login">login</a> or 
   <a href="/accounts/register">register</a> to submit!

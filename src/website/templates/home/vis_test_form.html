@@ -1,6 +1,10 @@
 
 
 {% if user.is_authenticated %}
+  The challenge has ended!  All submissions after Jan 20, 11:59:59PM will not be considered.
+  The winners of both challenges will be announce at
+  the final event on February 5th.   The scores for the final predictions will be released that day as well.
+<!--
   <form action="/submitvis/" method="post">
     <table class="register" style="width:100%">
       <tr>
@@ -12,7 +16,7 @@
       </tr>
     </table>
   </form>
-
+-->
 {% else %}
   Please <a href="/accounts/login">login</a> or 
   <a href="/accounts/register">register</a> to submit!
