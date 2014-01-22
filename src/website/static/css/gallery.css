@@ -7,7 +7,7 @@ div.submission {
   width: 25%;
   height: 200px;
   margin: 25px;
-  /*border: 5px solid whitesmoke;*/
+  border: 5px solid white;
   float: left;
 }
 div.submission:hover {
