@@ -1,23 +1,36 @@
 from header import *
 from django.core.mail import send_mail, send_mass_mail
 
-subject = "Update to prediction challenge specification"
+subject = "Updates to the datasets"
 text = """Dear %s,
 
-We want to update you on fixes to the prediction challenge.  
+We have extended the provided datasets: 
 
-We intended to remove 4 hour time spans and ask you to predict the
-ridership within the middle two hours (e.g., we remove 1-5pm, you predict 2-4pm).
-We neglected to fully describe this and mistakenly asked you to predict 
-ridership counts in all 4 hours.
+* the dropoff data now spans from May to the end of November.  
+* The weather data now goes to the end of the year.  
+* Finally, we added the list of locations that the prediction challenge asks you to predict.  
 
-This error has been corrected, and the test files, submission scores, and 
-contest descriptions have been updated.  We will keep a list of clarifications 
-on each of the contest pages and notify you when anything else changes.
+All of these can be downloaded on the datasets page.
 
 Thank you,
 MIT Big Data Challenge
 """
+
+subject = "Final prediction locations released"
+text = """Dear %s,
+
+We have released the ground truth for the inital prediction test.  You
+can download it in the /datasets page.
+
+We have also released the locations and the submission form for the final
+prediction challenge.  Please note that scores for the final submissions
+will not be revealed until the end of the challenge.
+
+Thank you,
+MIT Big Data Challenge
+"""
+
+
 
 datas = []
 for user in User.objects.all():
