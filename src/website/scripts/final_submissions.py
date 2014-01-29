@@ -27,11 +27,22 @@ scores = {}
 for email, (text, tstamp) in last_submits.items():
   try:
     score = compute_score(parse(text), TEST2_COUNTS)
-    scores[email] = (score, tstamp)
+    errs = compute_score_breakdown(parse(text), TEST2_COUNTS)
+    scores[email] = (score, errs, tstamp)
   except Exception as e:
     print email
     print e
 
-for email, (score, tstamp) in sorted(scores.items(), key=lambda p: p[1], reverse=True):
+pairs = sorted(scores.items(), key=lambda p: p[1], reverse=True)
+for email, (score, errs, tstamp) in pairs:
   print '%s\t%.7f\t%s' % (tstamp, score, email)
+  
+cols = []
+for email, (score, errs, tstamp) in pairs:
+  cols.append([email] + errs)
+cols.insert(0, ['locid'] + range(len(cols[0]) - 1))
+
+rows = zip(*cols)
+for row in rows:
+  print ','.join(map(str, row))
   

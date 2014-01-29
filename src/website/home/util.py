@@ -692,6 +692,21 @@ for pair in map(lambda line: map(int, line.split()), TEST1_COUNTS.split('\n')):
 
 
 
+# worry about giant ints
+def compute_score_breakdown(demands, correct_demands=None):
+  if not correct_demands:
+    correct_demands = CORRECT_DEMANDS
+
+  errs = []
+  for key in correct_demands:
+    trueval = correct_demands[key]
+    estval = demands.get(key, 0)
+    errs.append(trueval - estval)
+  return errs
+
+  return 1. / (1. + sum(sqerrs) ** 0.5)
+
+
 
 
 # worry about giant ints
