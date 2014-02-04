@@ -123,8 +123,7 @@ def submit_vis(request):
 
 
 def gallery(request, password):
-  if True or password == 'imjusthereforthefood':
-    return render(request, 'home/gallery.html', {})
+  return render(request, 'home/gallery.html', {})
   return HttpResponseRedirect('/')
 
 def stats(request, password):
