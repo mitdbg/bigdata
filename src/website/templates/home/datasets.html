@@ -28,12 +28,17 @@
 <div class="section">
   <h1>Get the data</h1>
 
+  The contest is over so we have disabled all downloads.
+
 {% if not user.is_authenticated %}
+<!--
 <div class="infobox">
   Please <a href="/accounts/login?next=/datasets">login</a> or <a href="/accounts/register?next=/datasets">register</a> to download the datasets.
 </div>
+-->
 {% endif %}
 
+<!--
   <p>We provide the following datasets for your use in the challenges.  {% if not user.is_authenticated %}Please <a href="/accounts/login">login</a> to download the files.  {% endif %}</p>
 
   <p>The goal is to produce the best result with the data we provide, not to find other sets that may improve your ability to predict.  Please restrict yourself to using ONLY these data sets.</p>
@@ -165,6 +170,7 @@ You can ignore some of the system messages mixed in with the Tweets.  They look 
   This contains the location, time, and description information about all Boston events.
 </p>
 </div>
+-->
 
 {% include "home/disqus.html" %}
 

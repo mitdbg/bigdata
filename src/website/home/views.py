@@ -64,12 +64,13 @@ def download(request, fname=None):
   ]
   valid_files += ['test.txt']
 
-  if fname in valid_files:
+  if False and fname in valid_files:
     r = HttpResponse()
     r['Content-Disposition'] = 'attachment; filename=%s' % fname
     r['X-Accel-Redirect'] = '/private/%s' % fname
     r['Content-Type'] = 'application/octet-stream'
     return r
+  return error(request, "Download Error", "Contest is over, downloads are disabled")
   return error(request, "Download Error", "Could not find downloadable file %s" % fname)
 
 @login_required
