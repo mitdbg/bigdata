@@ -680,10 +680,13 @@ TEST1_COUNTS = """0 9
 677 34"""
 
 TEST2_COUNTS = {}
-with file("/home/ubuntu/counts2.txt", 'r') as f:
-  for l in f:
-    p = map(int, l.split())
-    TEST2_COUNTS[p[0]] = p[1]
+try:
+  with file("/home/ubuntu/counts2.txt", 'r') as f:
+    for l in f:
+      p = map(int, l.split())
+      TEST2_COUNTS[p[0]] = p[1]
+except:
+  pass
 
 
 CORRECT_DEMANDS = {}
