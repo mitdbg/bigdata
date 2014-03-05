@@ -1,3 +1,11 @@
+Lessons Learned
+=================
+
+* Check timezones when picking final submission cutoffs!
+* Make sure each team only submits one account
+* Make sure visualizations are still up
+
+
 MIT CSAIL Big Data Challenge
 ======================
 
