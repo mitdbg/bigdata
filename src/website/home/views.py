@@ -60,7 +60,8 @@ def download(request, fname=None):
     'pickups_test1.csv',
     'dropoffs.csv.gz',
     'wunderground.json.gz',
-    'events.csv.gz'
+    'events.csv.gz',
+    'pickups_test2.csv'
   ]
   valid_files += ['test.txt']
 
