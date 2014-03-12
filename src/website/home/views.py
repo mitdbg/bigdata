@@ -66,6 +66,7 @@ def download(request, fname=None):
   valid_files += ['test.txt']
   valid_files = [ 'pickups_test2.csv']
 
+  print fname, valid_files
   if fname in valid_files:
     r = HttpResponse()
     r['Content-Disposition'] = 'attachment; filename=%s' % fname
