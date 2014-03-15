@@ -66,7 +66,7 @@ def download(request, fname=None):
   valid_files += ['test.txt']
   valid_files = [ 'pickups_test2.csv']
 
-  if fname in valid_files:
+  if fname in valid_files or 'pickups_' in fname:
     r = HttpResponse()
     r['Content-Disposition'] = 'attachment; filename=%s' % fname
     r['X-Accel-Redirect'] = '/private/%s' % fname
